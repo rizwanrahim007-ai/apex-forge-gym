@@ -4528,3 +4528,49 @@ white-space:nowrap;
     width:100%;
 
 }
+/* ================= PREMIUM SCROLLBAR ================= */
+
+::-webkit-scrollbar{
+    width:12px;
+}
+
+::-webkit-scrollbar-track{
+    background:#0a0a0a;
+}
+
+::-webkit-scrollbar-thumb{
+    background:linear-gradient(
+        180deg,
+        #FFD700,
+        #c89b2d,
+        #FFD700
+    );
+    border-radius:50px;
+    border:2px solid #0a0a0a;
+    transition:.3s;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background:linear-gradient(
+        180deg,
+        #ffe56d,
+        #FFD700,
+        #b8860b
+    );
+}
+
+/* Firefox */
+
+html{
+    scrollbar-width:thin;
+    scrollbar-color:#FFD700 #0a0a0a;
+}
+@media (max-width:768px){
+
+.hero::before{
+
+    background:rgba(0,0,0,.35);
+
+}
+
+}
