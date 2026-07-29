@@ -4574,3 +4574,10 @@ html{
 }
 
 }
+::-webkit-scrollbar-thumb{
+
+    box-shadow:
+    0 0 10px rgba(255,215,0,.45),
+    0 0 20px rgba(255,215,0,.25);
+
+}
