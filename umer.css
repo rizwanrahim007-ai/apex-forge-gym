@@ -1,0 +1,4530 @@
+/*==================================================
+                GOOGLE FONTS
+==================================================*/
+@font-face {
+    font-family: "Bebas Neue";
+    src: url("assets/font/BebasNeue-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display:fallback;
+}
+@font-face {
+    font-family: "Inter";
+    src: url("assets/font/Inter-VariableFont_opsz\,wght.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: fallback;
+}
+
+/*==================================================
+                CSS VARIABLES
+==================================================*/
+
+:root{
+
+    /* Colors */
+
+    --bg:#0B0B0B;
+    --surface:#121212;
+    --surface-2:#1A1A1A;
+
+    --primary:#ffd60a;
+    --primary-light:#FFD700;
+
+    --white:#FFFFFF;
+    --text:#EAEAEA;
+    --text-light:#B5B5B5;
+
+    --border:rgba(255,255,255,.08);
+
+    /* Layout */
+
+    --container:min(92%,1280px);
+
+    /* Radius */
+
+    --radius-lg:999px;
+    --radius-md:22px;
+    --radius-sm:16px;
+
+    /* Shadows */
+
+    --shadow-sm:
+    0 10px 30px rgba(0,0,0,.18);
+
+    --shadow-md:
+    0 18px 50px rgba(0,0,0,.28);
+
+    --gold-shadow:
+    0 15px 40px rgba(212,175,55,.18);
+
+    /* Transition */
+
+    --transition:.35s cubic-bezier(.22,.61,.36,1);
+
+}
+
+/*==================================================
+                    RESET
+==================================================*/
+
+*,
+*::before,
+*::after{
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+}
+
+html{
+
+    scroll-behavior:smooth;
+    scroll-padding-top:100px;
+
+}
+
+body{
+
+    font-family:'Inter',sans-serif;
+
+    background:var(--bg);
+
+    color:var(--text);
+
+    overflow-x:hidden;
+
+    text-rendering:optimizeLegibility;
+
+    -webkit-font-smoothing:antialiased;
+
+}
+
+body.no-scroll{
+
+    overflow:hidden;
+
+}
+
+/*==================================================
+                GLOBAL ELEMENTS
+==================================================*/
+
+img{
+
+    display:block;
+
+    max-width:100%;
+
+}
+
+a{
+
+    color:inherit;
+
+    text-decoration:none;
+
+}
+
+button{
+
+    border:none;
+
+    background:none;
+
+    cursor:pointer;
+
+    font:inherit;
+
+}
+
+ul{
+
+    list-style:none;
+
+}
+
+section{
+
+    position:relative;
+
+}
+
+.container{
+
+    width:var(--container);
+
+    margin-inline:auto;
+
+}
+
+/*==================================================
+                HEADER
+==================================================*/
+
+.header{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    z-index:1000;
+
+    padding:20px 0;
+
+    transition:var(--transition);
+
+}
+
+.header.scrolled{
+
+    padding:14px 0;
+
+}
+
+/*==================================================
+                NAVBAR
+==================================================*/
+
+.navbar{
+
+    width:100%;
+
+}
+
+.nav-container{
+
+    width:var(--container);
+
+    margin-inline:auto;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:32px;
+
+    height:76px;
+
+    padding:0 28px;
+
+    border-radius:999px;
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid var(--border);
+
+    backdrop-filter:blur(18px);
+
+    -webkit-backdrop-filter:blur(18px);
+
+    box-shadow:var(--shadow-sm);
+
+    transition:var(--transition);
+
+}
+
+.header.scrolled .nav-container{
+
+    background:rgba(10,10,10,.72);
+
+    border-color:rgba(255,255,255,.10);
+
+    box-shadow:
+    var(--shadow-md),
+    var(--gold-shadow);
+
+}
+
+/*==================================================
+                    LOGO
+==================================================*/
+
+.logo{
+
+    display:flex;
+
+    align-items:center;
+
+    flex-shrink:0;
+
+    font-family:"Bebas Neue",sans-serif;
+
+    font-size:2rem;
+
+    letter-spacing:2px;
+
+    color:var(--white);
+
+    transition:var(--transition);
+
+}
+
+.logo span{
+
+    color:var(--primary);
+
+}
+
+.logo:hover{
+
+    transform:translateY(-2px);
+
+}
+/*==================================================
+                DESKTOP NAVIGATION
+==================================================*/
+
+.nav-menu{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:clamp(24px,2vw,42px);
+
+    margin-left:auto;
+
+}
+
+.nav-menu li{
+
+    position:relative;
+
+}
+
+.nav-link{
+
+    position:relative;
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:10px 2px;
+
+    font-size:.96rem;
+
+    font-weight:500;
+
+    color:var(--text-light);
+
+    transition:var(--transition);
+
+}
+
+.nav-link:hover{
+
+    color:var(--white);
+
+}
+
+.nav-link.active{
+
+    color:var(--white);
+
+}
+
+/*==================================================
+            PREMIUM UNDERLINE
+==================================================*/
+
+.nav-link::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+
+    bottom:-4px;
+
+    width:0;
+
+    height:2px;
+
+    border-radius:999px;
+
+    transform:translateX(-50%);
+
+    background:linear-gradient(
+        90deg,
+        var(--primary),
+        var(--primary-light)
+    );
+
+    transition:width .35s ease;
+
+}
+
+.nav-link:hover::after,
+.nav-link.active::after{
+
+    width:100%;
+
+}
+
+/*==================================================
+                DESKTOP CTA
+==================================================*/
+
+.nav-btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    flex-shrink:0;
+
+    margin-left:32px;
+
+    min-width:160px;
+
+    height:52px;
+
+    padding:0 28px;
+
+    border-radius:999px;
+
+    background:#ffd60a;
+    color:#111;
+
+    font-size:.95rem;
+
+    font-weight:700;
+
+    letter-spacing:.3px;
+
+    box-shadow:var(--gold-shadow);
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease,
+        filter .35s ease;
+
+}
+
+.nav-btn:hover{
+
+    transform:translateY(-3px);
+
+    filter:brightness(1.05);
+
+    box-shadow:
+        0 18px 42px rgba(212,175,55,.28);
+
+}
+
+.nav-btn:active{
+
+    transform:translateY(-1px);
+
+}
+
+/*==================================================
+            KEYBOARD ACCESSIBILITY
+==================================================*/
+
+.nav-link:focus-visible,
+.nav-btn:focus-visible{
+
+    outline:2px solid var(--primary);
+
+    outline-offset:4px;
+
+}
+
+/*==================================================
+            HAMBURGER (BASE)
+==================================================*/
+
+.menu-toggle{
+
+    display:none;
+
+    align-items:center;
+
+    justify-content:center;
+
+    width:52px;
+
+    height:52px;
+
+    flex-shrink:0;
+
+    border-radius:50%;
+
+    color:var(--white);
+
+    transition:var(--transition);
+
+    position: relative;
+
+    z-index: 10001;
+
+}
+
+.menu-toggle svg{
+
+    width:28px;
+
+    height:28px;
+
+}
+
+.line{
+
+    transform-origin:center;
+
+    transition:
+        transform .4s cubic-bezier(.22,.61,.36,1),
+        opacity .25s ease;
+
+}
+
+/*==================================================
+            MOBILE MENU (BASE)
+==================================================*/
+
+.mobile-menu{
+
+    position:fixed;
+
+    inset:0;
+
+    visibility:hidden;
+
+    opacity:0;
+
+    pointer-events:none;
+
+    z-index: 9998;
+
+}
+
+.menu-overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.55);
+
+    backdrop-filter:blur(6px);
+
+    opacity:0;
+
+    visibility:hidden;
+
+      z-index:9997;
+
+}
+/*==================================================
+            MOBILE MENU PANEL
+==================================================*/
+
+.mobile-menu{
+
+    position:fixed;
+
+    inset:0;
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    visibility:hidden;
+
+    opacity:0;
+
+    pointer-events:none;
+
+    transition:
+        opacity .35s ease,
+        visibility .35s ease;
+
+    z-index:9998;
+
+}
+
+.mobile-menu.active{
+
+    visibility:visible;
+
+    opacity:1;
+
+    pointer-events:auto;
+
+}
+
+/*==================================================
+                MENU PANEL
+==================================================*/
+
+.mobile-nav{
+
+    position:relative;
+
+    width:min(420px,100%);
+
+    height:100%;
+
+    background:#0D0D0D;
+
+    border-left:1px solid rgba(255,255,255,.08);
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    padding:110px 42px 48px;
+
+    transform:translateX(100%);
+
+    transition:transform .5s cubic-bezier(.22,.61,.36,1);
+
+    overflow-y:auto;
+
+    overflow-x:hidden;
+
+}
+
+.mobile-menu.active .mobile-nav{
+
+    transform:translateX(0);
+
+}
+
+/*==================================================
+            MOBILE LINKS
+==================================================*/
+
+.mobile-menu-list{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:8px;
+
+}
+
+.mobile-menu-list li{
+
+    width:100%;
+
+}
+
+.mobile-menu-list a{
+
+    display:flex;
+
+    align-items:center;
+
+    width:100%;
+
+    min-height:58px;
+
+    padding:0 20px;
+
+    border-radius:16px;
+
+    color:var(--text);
+
+    font-size:1rem;
+
+    font-weight:500;
+
+    transition:
+        background .3s ease,
+        color .3s ease,
+        transform .3s ease;
+
+}
+
+.mobile-menu-list a:hover{
+
+    background:rgba(255,255,255,.06);
+
+    color:var(--white);
+
+    transform:translateX(8px);
+
+}
+
+.mobile-menu-list a.active{
+
+    background:rgba(212,175,55,.12);
+
+    color:var(--primary);
+
+}
+
+/*==================================================
+            MOBILE CTA
+==================================================*/
+
+.mobile-btn{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    width:100%;
+
+    min-height:58px;
+
+    margin-top:42px;
+
+    border-radius:18px;
+
+    background:linear-gradient(
+        135deg,
+        var(--primary),
+        var(--primary-light)
+    );
+
+    color:#111;
+
+    font-weight:700;
+
+    letter-spacing:.4px;
+
+    box-shadow:
+        0 16px 40px rgba(212,175,55,.22);
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease,
+        filter .3s ease;
+
+}
+
+.mobile-btn:hover{
+
+    transform:translateY(-3px);
+
+    filter:brightness(1.05);
+
+    box-shadow:
+        0 24px 50px rgba(212,175,55,.32);
+
+}
+
+.mobile-btn:active{
+
+    transform:scale(.98);
+
+}
+
+/*==================================================
+            MENU OVERLAY
+==================================================*/
+
+.menu-overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.55);
+
+    backdrop-filter:blur(8px);
+
+    -webkit-backdrop-filter:blur(8px);
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:
+        opacity .35s ease,
+        visibility .35s ease;
+
+    z-index:9997;
+
+}
+
+.menu-overlay.active{
+
+    opacity:1;
+
+    visibility:visible;
+
+}
+
+/*==================================================
+            HAMBURGER
+==================================================*/
+
+.menu-toggle{
+
+    position:relative;
+
+    display:none;
+
+    align-items:center;
+
+    justify-content:center;
+
+    width:52px;
+
+    height:52px;
+
+    border-radius:50%;
+
+    color:var(--white);
+
+    z-index:10000;
+
+}
+
+.menu-toggle svg{
+
+    overflow:visible;
+
+    display: block;
+
+}
+
+.line{
+
+    transform-box:fill-box;
+
+    transform-origin:center;
+
+    transition:
+        transform .42s cubic-bezier(.22,.61,.36,1),
+        opacity .25s ease;
+
+}
+
+.menu-toggle.active{
+
+     position:fixed;
+
+    top:22px;
+
+    right:22px;
+
+    z-index:10002;
+
+    color:#fff;
+
+
+
+}
+
+.menu-toggle.active .line1{
+
+   transform:translateY(4.8px) rotate(45deg);
+}
+
+.menu-toggle.active .line2{
+
+    opacity:0;
+
+}
+
+.menu-toggle.active .line3{
+
+       transform:translateY(-4.8px) rotate(-45deg);
+
+
+}
+
+/*==================================================
+            SAFETY
+==================================================*/
+
+.mobile-nav,
+.mobile-menu,
+.mobile-menu-list{
+
+    max-width:100%;
+
+}
+
+body{
+
+    overflow-x:clip;
+
+}
+
+@supports not (overflow:clip){
+
+    body{
+
+        overflow-x:hidden;
+
+    }
+
+}
+body.no-scroll{
+
+    overflow:hidden;
+
+    touch-action:none;
+
+}
+.menu-toggle{
+
+    z-index:10001;
+
+}
+
+.menu-close{
+
+    position:absolute;
+
+    top:22px;
+
+    right:22px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    width:50px;
+
+    height:50px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.06);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    color:var(--white);
+
+    backdrop-filter:blur(12px);
+
+    transition:all .35s ease;
+
+    z-index:10;
+
+}
+
+.menu-close:hover{
+
+    background:rgba(212,175,55,.15);
+
+    border-color:rgba(212,175,55,.35);
+
+    color:var(--primary);
+
+    transform:rotate(90deg);
+
+}
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero{
+    position:relative;
+    min-height:100vh;
+    width:100%;
+    display:flex;
+    align-items:center;
+    overflow:hidden;
+    isolation:isolate;
+}
+
+
+/* Background Image */
+
+.hero-bg{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    z-index:0;
+}
+
+
+.hero-bg img{
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    object-position:center;
+
+    filter:
+    brightness(.55)
+    contrast(1.15)
+    saturate(1.1);
+
+    transform:scale(1.08);
+
+    animation:
+    heroZoom 14s ease-in-out infinite alternate;
+
+}
+
+
+
+/* Cinematic Overlay */
+
+.hero-overlay{
+    position:absolute;
+    inset:0;
+    z-index:1;
+
+    background:
+    linear-gradient(
+        90deg,
+        rgba(0,0,0,.95) 0%,
+        rgba(0,0,0,.75) 40%,
+        rgba(0,0,0,.35) 100%
+    ),
+    linear-gradient(
+        0deg,
+        #0B0B0B 0%,
+        transparent 35%
+    );
+}
+
+
+
+/* Container */
+
+.hero-container{
+    width:100%;
+    max-width:1200px;
+    margin:auto;
+    padding:120px 25px 70px;
+     position:relative;
+    z-index:2;
+}
+
+
+
+/* Content */
+
+.hero-content{
+    max-width:720px;
+}
+
+
+
+/* Small Tag */
+
+.hero-tag{
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+    color:#FFD700;
+    font-size:.85rem;
+    letter-spacing:3px;
+    font-weight:600;
+
+    margin-bottom:25px;
+
+    animation:fadeUp .8s ease forwards;
+}
+
+
+.hero-tag span{
+    width:45px;
+    height:2px;
+    background:#FFD700;
+}
+
+
+
+/* Heading */
+
+.hero-content h1{
+
+    font-family:"Bebas Neue", sans-serif;
+
+    font-size:clamp(3.5rem,7vw,6.5rem);
+
+    line-height:.95;
+
+    letter-spacing:2px;
+
+    color:white;
+
+    margin:0 0 25px;
+
+    /* animation:fadeUp 1s ease forwards; */
+}
+
+
+
+.hero-content h1 span{
+
+    display:block;
+
+    background:
+    linear-gradient(
+        90deg,
+        #FFD700,
+        #fff2a6,
+        #FFD700
+    );
+
+    -webkit-background-clip:text;
+    background-clip:text;
+
+    color:transparent;
+
+}
+
+
+
+/* Paragraph */
+
+.hero-content p{
+
+    max-width:580px;
+
+    color:#c8c8c8;
+
+    font-family:"Inter",sans-serif;
+
+    font-size:1.05rem;
+
+    line-height:1.8;
+
+    margin-bottom:40px;
+
+    animation:fadeUp 1.2s ease forwards;
+
+}
+
+
+
+/* Buttons */
+
+.hero-actions{
+
+    display:flex;
+    align-items:center;
+    gap:20px;
+
+    flex-wrap:wrap;
+
+    animation:fadeUp 1.4s ease forwards;
+}
+
+
+
+.hero-primary,
+.hero-secondary{
+
+    display:inline-flex;
+
+    align-items:center;
+    justify-content:center;
+
+    height:55px;
+
+    padding:0 35px;
+
+    border-radius:50px;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    transition:.4s ease;
+
+}
+
+
+
+.hero-primary{
+
+    background:#FFD700;
+
+    color:#080808;
+
+    box-shadow:
+    0 10px 30px rgba(255,215,0,.25);
+
+}
+
+
+
+.hero-primary:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:
+    0 15px 40px rgba(255,215,0,.45);
+
+}
+
+
+
+.hero-secondary{
+
+    border:1px solid rgba(255,255,255,.3);
+
+    color:white;
+
+    backdrop-filter:blur(10px);
+
+}
+
+
+
+.hero-secondary:hover{
+
+    border-color:#FFD700;
+
+    color:#FFD700;
+
+    transform:translateY(-5px);
+
+}
+
+
+
+/* Stats */
+
+.hero-metrics{
+
+    display:flex;
+
+    gap:45px;
+
+    margin-top:70px;
+
+    flex-wrap:wrap;
+
+}
+
+
+
+.metric{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:8px;
+
+}
+
+
+
+.metric strong{
+
+    font-family:"Bebas Neue";
+
+    font-size:3rem;
+
+    letter-spacing:1px;
+
+    color:white;
+
+}
+
+
+
+.metric small{
+
+    color:#999;
+
+    font-size:.9rem;
+
+}
+
+
+
+/* Animations */
+
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+        transform:translateY(35px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
+
+}
+
+
+
+@keyframes heroZoom{
+
+    from{
+        transform:scale(1.05);
+    }
+
+    to{
+        transform:scale(1.12);
+    }
+
+}
+
+
+/* Global Overflow Protection */
+
+html,
+body{
+
+    max-width:100%;
+    overflow-x:hidden;
+
+}
+.hero-primary{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+
+.hero-primary::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:-120%;
+
+    width:80%;
+    height:100%;
+
+    background:
+    linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,.6),
+        transparent
+    );
+
+    transition:.6s;
+
+}
+
+
+
+.hero-primary:hover::before{
+
+    left:120%;
+
+}
+/* =========================
+   ABOUT SECTION
+========================= */
+
+.about{
+
+    width:100%;
+
+    padding:120px 0;
+
+    background:#0B0B0B;
+
+    overflow:hidden;
+
+}
+
+
+
+.about-container{
+
+    max-width:1200px;
+
+    width:100%;
+
+    margin:auto;
+
+    padding:0 25px;
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    align-items:center;
+
+    gap:80px;
+
+}
+
+
+
+/* =========================
+   ABOUT CONTENT
+========================= */
+
+
+.about-content{
+
+    max-width:600px;
+
+}
+
+
+
+.about-tag{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    color:#FFD700;
+
+    font-size:.85rem;
+
+    letter-spacing:3px;
+
+    font-weight:600;
+
+    margin-bottom:25px;
+
+}
+
+
+.about-tag::before{
+
+    content:"";
+
+    width:40px;
+
+    height:2px;
+
+    background:#FFD700;
+
+}
+
+
+
+
+
+.about-content h2{
+
+    font-family:"Bebas Neue",sans-serif;
+
+    font-size:clamp(3rem,5vw,5rem);
+
+    line-height:1;
+
+    letter-spacing:2px;
+
+    color:white;
+
+    margin-bottom:30px;
+
+}
+
+
+
+.about-content h2 span{
+
+    display:block;
+
+    background:
+
+    linear-gradient(
+        90deg,
+        #FFD700,
+        #fff1a8,
+        #FFD700
+    );
+
+    background-clip:text;
+
+    -webkit-background-clip:text;
+
+    color:transparent;
+
+}
+
+
+
+
+.about-content p{
+
+    color:#b8b8b8;
+
+    font-family:"Inter",sans-serif;
+
+    font-size:1rem;
+
+    line-height:1.9;
+
+    margin-bottom:20px;
+
+}
+
+
+
+
+
+/* =========================
+   HIGHLIGHTS
+========================= */
+
+
+.about-highlights{
+
+    display:flex;
+
+    gap:40px;
+
+    margin-top:45px;
+
+    flex-wrap:wrap;
+
+}
+
+
+
+.highlight{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:8px;
+
+}
+
+
+
+.highlight h3{
+
+    font-family:"Bebas Neue",sans-serif;
+
+    font-size:3rem;
+
+    color:white;
+
+    line-height:1;
+
+}
+
+
+
+.highlight span{
+
+    color:#888;
+
+    font-size:.85rem;
+
+}
+
+
+
+/* =========================
+   ABOUT IMAGE
+========================= */
+
+
+.about-image{
+
+    position:relative;
+
+    width:100%;
+
+    max-width:520px;
+
+    justify-self:end;
+
+}
+
+
+
+.about-image img{
+
+    width:100%;
+
+    height:650px;
+
+    object-fit:cover;
+
+    display:block;
+
+    border-radius:20px;
+
+    filter:
+
+    brightness(.75)
+    contrast(1.1);
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+
+
+
+
+.image-frame{
+
+    position:absolute;
+
+    width:100%;
+
+    height:100%;
+
+    border:1px solid rgba(255,215,0,.5);
+
+    border-radius:20px;
+
+    top:25px;
+
+    right:-25px;
+
+    z-index:1;
+
+}
+
+
+
+
+
+.about-image::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+    linear-gradient(
+        135deg,
+        transparent,
+        rgba(255,215,0,.15)
+    );
+
+    border-radius:20px;
+
+    z-index:3;
+
+    pointer-events:none;
+
+}
+
+
+
+
+
+/* =========================
+   HOVER EFFECT
+========================= */
+
+
+.about-image img{
+
+    transition:.6s ease;
+
+}
+
+
+
+.about-image:hover img{
+
+    transform:scale(1.03);
+
+}
+
+
+
+
+
+/* =========================
+   TABLET
+========================= */
+
+
+@media(max-width:992px){
+
+
+    .about-container{
+
+        grid-template-columns:1fr;
+
+        gap:60px;
+
+    }
+
+
+
+    .about-content{
+
+        max-width:700px;
+
+    }
+
+
+
+    .about-image{
+
+        justify-self:center;
+
+    }
+
+
+}
+
+
+
+
+
+/* =========================
+   MOBILE
+========================= */
+
+
+@media(max-width:768px){
+
+
+    .about{
+
+        padding:80px 0;
+
+    }
+
+
+
+    .about-container{
+
+        padding:0 20px;
+
+    }
+
+
+
+    .about-content h2{
+
+        font-size:3.5rem;
+
+    }
+
+
+
+    .about-highlights{
+
+        gap:30px;
+
+    }
+
+
+
+    .about-image img{
+
+        height:450px;
+
+    }
+
+
+
+    .image-frame{
+
+        top:15px;
+
+        right:-15px;
+
+    }
+
+
+}
+
+
+
+
+
+/* =========================
+   SMALL DEVICES
+========================= */
+
+
+@media(max-width:400px){
+
+
+    .about-content h2{
+
+        font-size:2.8rem;
+
+    }
+
+
+
+    .about-content p{
+
+        font-size:.95rem;
+
+    }
+
+
+
+    .about-highlights{
+
+        flex-direction:column;
+
+        gap:20px;
+
+    }
+
+
+
+    .about-image img{
+
+        height:380px;
+
+    }
+
+
+
+    .image-frame{
+
+        display:none;
+
+    }
+
+
+}
+.about{
+    position:relative;
+    z-index:10;
+    min-height:500px;
+}
+/* =========================
+   ABOUT SCROLL ANIMATION
+========================= */
+
+.about-content,
+.about-image{
+
+    transition:
+    opacity .8s ease,
+    transform .8s cubic-bezier(.16,1,.3,1);
+
+}
+
+
+.about-content.reveal-ready{
+
+    opacity:0;
+
+    transform:translateY(50px);
+
+}
+
+
+.about-image.reveal-ready{
+
+    opacity:0;
+
+    transform:translateX(60px);
+
+}
+
+
+
+.about-content.reveal-show,
+.about-image.reveal-show{
+
+    opacity:1;
+
+    transform:translate(0);
+
+}
+/* ================= SERVICES SECTION ================= */
+
+.services {
+    width: 100%;
+    padding: 120px 5%;
+    background: #0b0b0b;
+    overflow: hidden;
+}
+
+
+/* HEADER */
+
+.services-header {
+    max-width: 800px;
+    margin: 0 auto 90px;
+    text-align: center;
+}
+
+
+.section-tag {
+    color: #ffd60a;
+    font-size: 14px;
+    letter-spacing: 4px;
+    font-weight: 600;
+}
+
+
+.services-header h2 {
+    margin-top: 20px;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: clamp(45px, 6vw, 75px);
+    line-height: 1;
+    color: white;
+}
+
+
+.services-header h2 span {
+    color: #ffd60a;
+}
+
+
+.services-header p {
+    margin-top: 25px;
+    color: #a8a8a8;
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+
+
+
+/* SERVICE ITEM */
+
+.service-item {
+
+    width: 100%;
+    min-height: 600px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    align-items: center;
+
+    gap: 70px;
+
+    margin-bottom: 120px;
+
+}
+
+
+
+
+/* IMAGE */
+
+.service-image {
+
+    width: 100%;
+    height: 600px;
+
+    overflow: hidden;
+
+    border-radius: 25px;
+
+    position: relative;
+
+}
+
+
+.service-image::after {
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+    linear-gradient(
+        180deg,
+        transparent,
+        rgba(0,0,0,.65)
+    );
+
+}
+
+
+
+.service-image img {
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    transition:.6s ease;
+
+}
+
+
+
+.service-item:hover .service-image img {
+
+    transform:scale(1.08);
+
+}
+
+
+
+
+/* CONTENT */
+
+
+.service-content {
+
+    position:relative;
+
+}
+
+
+
+.service-number {
+
+    display:block;
+
+    font-size:80px;
+
+    font-family:"Bebas Neue", sans-serif;
+
+    color:rgba(255,214,10,.15);
+
+    line-height:1;
+
+    margin-bottom:-20px;
+
+}
+
+
+
+.service-content h3 {
+
+    color:white;
+
+    font-family:"Bebas Neue",sans-serif;
+
+    font-size:60px;
+
+    letter-spacing:1px;
+
+    margin-bottom:20px;
+
+}
+
+
+
+.service-content p {
+
+    color:#b8b8b8;
+
+    font-size:18px;
+
+    line-height:1.8;
+
+    max-width:500px;
+
+    margin-bottom:35px;
+
+}
+
+
+
+/* BUTTON */
+
+
+.service-btn {
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:14px 35px;
+
+    border:1px solid #ffd60a;
+
+    color:#ffd60a;
+
+    text-decoration:none;
+
+    border-radius:50px;
+
+    font-weight:600;
+
+    transition:.35s ease;
+
+}
+
+
+
+.service-btn:hover {
+
+    background:#ffd60a;
+
+    color:#0b0b0b;
+
+    transform:translateY(-5px);
+
+    box-shadow:
+    0 10px 30px rgba(255,214,10,.25);
+
+}
+
+
+
+
+/* ALTERNATE LAYOUT */
+
+
+.service-item.reverse .service-image {
+
+    order:2;
+
+}
+
+
+.service-item.reverse .service-content {
+
+    order:1;
+
+}
+
+
+
+/* ================= SERVICE REVEAL ANIMATION ================= */
+
+
+.service-item {
+
+    opacity:0;
+
+    transform:translateY(80px);
+
+    transition:
+    opacity .8s ease,
+    transform .8s ease;
+
+}
+
+
+
+.service-item.show {
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+
+
+
+/* Image animation */
+
+
+.service-image img {
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    transition:transform .8s ease;
+
+    will-change:transform;
+
+}
+.service-item:hover .service-image img {
+
+    transform:
+    scale(1.12);
+
+}
+
+
+
+.service-item.show .service-image img {
+
+    transform:scale(1);
+
+}
+
+
+
+
+
+/* Content stagger */
+
+
+.service-content {
+
+    opacity:0;
+
+    transform:translateX(40px);
+
+    transition:
+    opacity .8s ease .25s,
+    transform .8s ease .25s;
+
+}
+
+
+
+.service-item.show .service-content {
+
+    opacity:1;
+
+    transform:translateX(0);
+
+}
+
+
+
+/* Reverse services */
+
+.service-item.reverse .service-content {
+
+    transform:translateX(-40px);
+
+}
+
+
+.service-item.reverse.show .service-content {
+
+    transform:translateX(0);
+
+}
+/* ================= MEMBERSHIP SECTION ================= */
+
+
+.membership {
+
+    width:100%;
+
+    padding:120px 5%;
+
+    background:#0b0b0b;
+
+    overflow:hidden;
+
+}
+
+
+
+/* HEADER */
+
+
+.membership-header {
+
+    max-width:800px;
+
+    margin:0 auto 80px;
+
+    text-align:center;
+
+}
+
+
+
+.membership-header h2 {
+
+    margin-top:20px;
+
+    font-family:"Bebas Neue", sans-serif;
+
+    font-size:clamp(45px,6vw,75px);
+
+    color:white;
+
+    line-height:1;
+
+}
+
+
+
+.membership-header h2 span {
+
+    color:#ffd60a;
+
+}
+
+
+
+.membership-header p {
+
+    margin-top:25px;
+
+    color:#a8a8a8;
+
+    font-size:18px;
+
+    line-height:1.7;
+
+}
+
+
+
+
+
+/* PRICING CONTAINER */
+
+
+.pricing-container {
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:35px;
+
+    max-width:1200px;
+
+    margin:auto;
+
+}
+
+
+
+
+/* CARD */
+
+
+.pricing-card {
+
+    position:relative;
+
+    background:#151515;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:25px;
+
+    padding:45px 35px;
+
+    text-align:center;
+
+    transition:.4s ease;
+
+    overflow:hidden;
+
+}
+
+
+
+.pricing-card::before {
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:3px;
+
+    background:#ffd60a;
+
+    transform:scaleX(0);
+
+    transition:.4s ease;
+
+}
+
+
+
+.pricing-card:hover::before {
+
+    transform:scaleX(1);
+
+}
+
+
+
+.pricing-card:hover {
+
+    transform:translateY(-12px);
+
+    border-color:#ffd60a;
+
+    box-shadow:
+    0 20px 45px rgba(255,214,10,.12);
+
+}
+
+
+
+
+
+/* FEATURED CARD */
+
+
+.pricing-card.featured {
+
+    border:2px solid #ffd60a;
+
+    transform:translateY(-25px);
+
+}
+
+
+
+.pricing-card.featured:hover {
+
+    transform:translateY(-35px);
+
+}
+
+
+
+
+.popular-tag {
+
+    position:absolute;
+
+    top:20px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    background:#ffd60a;
+
+    color:#0b0b0b;
+
+    padding:8px 22px;
+
+    border-radius:50px;
+
+    font-size:12px;
+
+    font-weight:700;
+
+    letter-spacing:1px;
+
+}
+
+
+
+
+
+/* PLAN TEXT */
+
+
+.plan-name {
+
+    margin-top:25px;
+
+    color:#ffd60a;
+
+    font-size:18px;
+
+    letter-spacing:3px;
+
+    font-weight:700;
+
+}
+
+
+
+.pricing-card h3 {
+
+    color:white;
+
+    font-family:"Bebas Neue",sans-serif;
+
+    font-size:55px;
+
+    margin:25px 0;
+
+}
+
+
+
+.pricing-card h3 span {
+
+    font-family:"Inter",sans-serif;
+
+    font-size:16px;
+
+    color:#999;
+
+}
+
+
+
+
+
+.plan-desc {
+
+    color:#aaa;
+
+    line-height:1.7;
+
+    min-height:80px;
+
+}
+
+
+
+
+/* FEATURES */
+
+
+.pricing-card ul {
+
+    list-style:none;
+
+    padding:0;
+
+    margin:35px 0;
+
+}
+
+
+
+.pricing-card ul li {
+
+    color:#ddd;
+
+    padding:12px 0;
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+}
+
+
+
+
+
+/* BUTTON */
+
+
+.pricing-btn {
+
+    display:inline-flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:14px 40px;
+
+    border-radius:50px;
+
+    border:1px solid #ffd60a;
+
+    color:#ffd60a;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    transition:.35s ease;
+
+}
+
+
+
+.pricing-btn:hover {
+
+    background:#ffd60a;
+
+    color:#0b0b0b;
+
+    box-shadow:
+    0 10px 30px rgba(255,214,10,.25);
+
+    transform:translateY(-4px);
+
+}
+/* ================= PRICING REVEAL ================= */
+
+
+.pricing-card {
+
+    opacity:0;
+
+    transform:translateY(70px);
+
+    transition:
+    opacity .7s ease,
+    transform .7s ease;
+
+}
+
+
+
+.pricing-card.show {
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+
+/* Featured card */
+
+.pricing-card.featured.show {
+
+    transform:translateY(-25px);
+
+}
+/* ================= TESTIMONIALS ================= */
+
+.testimonials{
+
+    padding:120px 5%;
+
+    background:#0b0b0b;
+
+    overflow:hidden;
+
+}
+
+
+
+/* ================= HEADER ================= */
+
+.testimonials-header{
+
+    max-width:800px;
+
+    margin:0 auto 80px;
+
+    text-align:center;
+
+}
+
+
+
+.testimonials-header h2{
+
+    margin-top:20px;
+
+    font-family:"Bebas Neue",sans-serif;
+
+    font-size:clamp(50px,6vw,75px);
+
+    color:#fff;
+
+    line-height:1;
+
+}
+
+
+
+.testimonials-header h2 span{
+
+    color:#ffd60a;
+
+}
+
+
+
+.testimonials-header p{
+
+    margin-top:20px;
+
+    color:#9a9a9a;
+
+    line-height:1.8;
+
+    font-size:18px;
+
+}
+
+
+
+/* ================= CAROUSEL ================= */
+
+.testimonial-carousel{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:25px;
+
+}
+
+
+
+.carousel-track-container{
+
+    width:min(950px,100%);
+
+    overflow:hidden;
+
+}
+
+
+
+.carousel-track{
+
+    display:flex;
+
+    transition:transform .7s cubic-bezier(.22,.61,.36,1);
+
+}
+
+
+
+/* ================= CARD ================= */
+
+.testimonial-card{
+
+    min-width:100%;
+
+    padding:65px 55px;
+
+    background:
+
+    linear-gradient(
+
+    145deg,
+
+    rgba(26,26,26,.95),
+
+    rgba(12,12,12,.95)
+
+    );
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:30px;
+
+    text-align:center;
+
+    position:relative;
+
+    backdrop-filter:blur(18px);
+
+    transition:
+
+    transform .45s,
+
+    border-color .45s,
+
+    box-shadow .45s,
+
+    opacity .45s;
+
+}
+
+
+
+/* Gold Line */
+
+.testimonial-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:110px;
+
+    height:4px;
+
+    border-radius:20px;
+
+    background:#ffd60a;
+
+}
+
+
+
+/* Hover */
+
+.testimonial-card:hover{
+
+    transform:translateY(-10px);
+
+    border-color:#ffd60a;
+
+    box-shadow:
+
+    0 25px 60px rgba(255,214,10,.15);
+
+}
+
+
+
+/* ================= QUOTE ================= */
+
+.quote-icon{
+
+    font-size:95px;
+
+    font-family:"Bebas Neue",sans-serif;
+
+    color:rgba(255,214,10,.14);
+
+    line-height:.8;
+
+}
+
+
+
+/* ================= STARS ================= */
+
+.rating{
+
+    margin-top:8px;
+
+    color:#ffd60a;
+
+    font-size:24px;
+
+    letter-spacing:5px;
+
+}
+
+
+
+/* ================= TEXT ================= */
+
+.testimonial-card p{
+
+    max-width:650px;
+
+    margin:35px auto;
+
+    color:#d7d7d7;
+
+    font-size:20px;
+
+    line-height:1.9;
+
+}
+
+
+
+/* ================= CLIENT ================= */
+
+.client-info h3{
+
+    color:#fff;
+
+    font-size:24px;
+
+    margin-bottom:8px;
+
+}
+
+
+
+.client-info span{
+
+    color:#999;
+
+    font-size:15px;
+
+    letter-spacing:1px;
+
+}
+
+
+
+/* ================= BUTTONS ================= */
+
+.carousel-btn{
+
+    width:58px;
+
+    height:58px;
+
+    border-radius:50%;
+
+    border:1px solid rgba(255,214,10,.4);
+
+    background:#151515;
+
+    color:#ffd60a;
+
+    cursor:pointer;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    transition:.35s;
+
+}
+
+
+
+.carousel-btn:hover{
+
+    background:#ffd60a;
+
+    color:#111;
+
+    transform:translateY(-5px);
+
+    box-shadow:
+
+    0 18px 35px rgba(255,214,10,.25);
+
+}
+
+
+
+/* ================= DOTS ================= */
+
+.testimonial-dots{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:12px;
+
+    margin-top:40px;
+
+}
+
+
+
+.dot{
+
+    width:12px;
+
+    height:12px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#444;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+}
+
+
+
+.dot.active{
+
+    width:38px;
+
+    border-radius:30px;
+
+    background:#ffd60a;
+
+}
+
+
+
+/* ================= INITIAL ANIMATION ================= */
+
+.testimonial-card{
+
+    opacity:0;
+
+    transform:translateY(60px);
+
+}
+
+
+
+.testimonial-card.active{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+/* ================= TRAINERS ================= */
+
+.trainers{
+
+    width:100%;
+
+    padding:120px 5%;
+
+    background:#0b0b0b;
+
+}
+
+
+
+/* ================= HEADER ================= */
+
+.trainers-header{
+
+    max-width:800px;
+
+    margin:0 auto 80px;
+
+    text-align:center;
+
+}
+
+
+
+.trainers-header h2{
+
+    margin-top:20px;
+
+    font-family:"Bebas Neue",sans-serif;
+
+    font-size:clamp(50px,6vw,75px);
+
+    color:#fff;
+
+    line-height:1;
+
+}
+
+
+
+.trainers-header h2 span{
+
+    color:#ffd60a;
+
+}
+
+
+
+.trainers-header p{
+
+    margin-top:22px;
+
+    color:#9d9d9d;
+
+    font-size:18px;
+
+    line-height:1.8;
+
+}
+
+
+
+/* ================= GRID ================= */
+
+.trainers-grid{
+
+    display:grid;
+
+     grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+
+    gap:35px;
+
+      align-items:stretch;
+
+}
+
+
+
+/* ================= CARD ================= */
+
+.trainer-card{
+
+    background:#151515;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:24px;
+
+    overflow:hidden;
+
+    transition:.45s ease;
+
+    width: 100%;
+
+    height: 100%;
+
+
+}
+
+
+
+.trainer-card:hover{
+
+    transform:translateY(-12px);
+
+    border-color:#ffd60a;
+
+    box-shadow:
+
+    0 25px 55px rgba(255,214,10,.15);
+
+}
+
+
+
+/* ================= IMAGE ================= */
+
+.trainer-image{
+
+    position:relative;
+
+    overflow:hidden;
+  
+    width:100%;
+
+    aspect-ratio:4/5;
+
+    height:auto;
+
+
+}
+
+
+
+.trainer-image img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    transition:transform .6s ease;
+
+}
+
+
+
+.trainer-card:hover .trainer-image img{
+
+    transform:scale(1.12);
+
+}
+
+
+
+/* ================= OVERLAY ================= */
+
+.trainer-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    display:flex;
+
+    align-items:flex-end;
+
+    justify-content:center;
+
+    padding-bottom:30px;
+
+    background:
+
+    linear-gradient(
+
+        to top,
+
+        rgba(0,0,0,.92),
+
+        rgba(0,0,0,.15)
+
+    );
+
+    opacity:0;
+
+    transition:.45s;
+
+}
+
+
+
+.trainer-card:hover .trainer-overlay{
+
+    opacity:1;
+
+}
+
+
+
+/* ================= SOCIAL ================= */
+
+.trainer-social{
+
+    display:flex;
+
+    gap:16px;
+
+    transform:translateY(35px);
+
+    transition:.45s;
+
+}
+
+
+
+.trainer-card:hover .trainer-social{
+
+    transform:translateY(0);
+
+}
+
+
+
+.trainer-social a{
+
+    width:48px;
+
+    height:48px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:#ffd60a;
+
+    color:#111;
+
+    text-decoration:none;
+
+    font-size:18px;
+
+    transition:.35s;
+
+}
+
+
+
+.trainer-social a:hover{
+
+    transform:translateY(-6px) scale(1.08);
+
+    background:#fff;
+
+}
+
+
+
+/* ================= CONTENT ================= */
+
+.trainer-content{
+
+    padding:28px;
+
+    text-align:center;
+
+}
+
+
+
+/* Badge */
+
+.trainer-badge{
+
+    display:inline-block;
+
+    padding:8px 16px;
+
+    margin-bottom:18px;
+
+    border-radius:50px;
+
+    background:rgba(255,214,10,.12);
+
+    border:1px solid rgba(255,214,10,.35);
+
+    color:#ffd60a;
+
+    font-size:13px;
+
+    font-weight:600;
+
+    letter-spacing:.6px;
+
+}
+
+
+
+.trainer-content h3{
+
+    color:#fff;
+
+    font-size:28px;
+
+    margin-bottom:10px;
+
+}
+
+
+
+.trainer-content p{
+
+    color:#9c9c9c;
+
+    line-height:1.8;
+
+    font-size:16px;
+
+}
+
+
+
+/* ================= GOLD LINE ================= */
+
+.trainer-card::before{
+
+    content:"";
+
+    display:block;
+
+    width:0;
+
+    height:3px;
+
+    background:#ffd60a;
+
+    transition:.45s ease;
+
+}
+
+
+
+.trainer-card:hover::before{
+
+    width:100%;
+
+}
+
+
+
+/* ================= REVEAL ================= */
+
+.trainer-card{
+
+    opacity:0;
+
+    transform:translateY(60px);
+
+    transition:
+
+    opacity .7s ease,
+
+    transform .7s ease,
+
+    box-shadow .35s ease,
+
+    border-color .35s ease;
+
+}
+
+
+
+.trainer-card.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+/* ================= CONTACT ================= */
+
+.contact{
+
+    width:100%;
+
+    padding:120px 5%;
+
+    background:#0b0b0b;
+
+}
+
+
+
+.contact-container{
+
+    max-width:1400px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:70px;
+
+    align-items:center;
+
+}
+
+
+
+/* ================= LEFT ================= */
+
+.contact-content h2{
+
+    margin-top:20px;
+
+    font-family:"Bebas Neue",sans-serif;
+
+    font-size:clamp(50px,6vw,75px);
+
+    line-height:1;
+
+    color:#fff;
+
+}
+
+
+
+.contact-content h2 span{
+
+    color:#ffd60a;
+
+}
+
+
+
+.contact-content p{
+
+    margin-top:25px;
+
+    color:#9d9d9d;
+
+    font-size:18px;
+
+    line-height:1.8;
+
+}
+
+
+
+/* ================= CONTACT INFO ================= */
+
+.contact-info{
+
+    margin-top:45px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:22px;
+
+}
+
+
+
+.contact-box{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+    padding:20px;
+
+    background:#151515;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:18px;
+
+    transition:.35s ease;
+
+}
+
+
+
+.contact-box:hover{
+
+    border-color:#ffd60a;
+
+    transform:translateX(10px);
+
+    box-shadow:
+
+    0 15px 35px rgba(255,214,10,.12);
+
+}
+
+
+
+.contact-box i{
+
+    width:58px;
+
+    height:58px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:#ffd60a;
+
+    color:#111;
+
+    font-size:20px;
+
+}
+
+
+
+.contact-box h4{
+
+    color:#fff;
+
+    margin-bottom:6px;
+
+    font-size:18px;
+
+}
+
+
+
+.contact-box span{
+
+    color:#9c9c9c;
+
+    font-size:15px;
+
+}
+
+
+
+/* ================= FORM ================= */
+
+.contact-form{
+
+    padding:40px;
+
+    background:#151515;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:28px;
+
+    backdrop-filter:blur(18px);
+
+    transition:.4s ease;
+
+}
+
+
+
+.contact-form:hover{
+
+    border-color:#ffd60a;
+
+    box-shadow:
+
+    0 25px 60px rgba(255,214,10,.12);
+
+}
+
+
+
+.input-group{
+
+    margin-bottom:22px;
+
+}
+
+
+
+.contact-form input,
+
+.contact-form select,
+
+.contact-form textarea{
+
+    width:100%;
+
+    padding:17px 18px;
+
+    background:#0f0f0f;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:14px;
+
+    color:#fff;
+
+    font-size:16px;
+
+    outline:none;
+
+    transition:.35s ease;
+
+}
+
+
+
+.contact-form textarea{
+
+    resize:none;
+
+    min-height:170px;
+
+}
+
+
+
+.contact-form input::placeholder,
+
+.contact-form textarea::placeholder{
+
+    color:#888;
+
+}
+
+
+
+.contact-form select{
+
+    color:#888;
+
+}
+
+
+
+.contact-form option{
+
+    background:#151515;
+
+    color:#fff;
+
+}
+
+
+
+/* Focus */
+
+.contact-form input:focus,
+
+.contact-form textarea:focus,
+
+.contact-form select:focus{
+
+    border-color:#ffd60a;
+
+    box-shadow:
+
+    0 0 0 4px rgba(255,214,10,.08);
+
+}
+
+
+
+/* ================= BUTTON ================= */
+
+.contact-btn{
+
+    width:100%;
+
+    padding:18px;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:#ffd60a;
+
+    color:#111;
+
+    font-size:16px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.35s ease;
+
+}
+
+
+
+.contact-btn:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:
+
+    0 18px 40px rgba(255,214,10,.25);
+
+}
+
+
+
+/* ================= REVEAL ================= */
+
+.contact-content,
+
+.contact-form{
+
+    opacity:0;
+
+    transform:translateY(60px);
+
+    transition:
+
+    opacity .8s ease,
+
+    transform .8s ease;
+
+}
+
+
+
+.contact-content.show,
+
+.contact-form.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+/* ================= CTA ================= */
+
+.cta{
+
+    position:relative;
+
+    overflow:hidden;
+
+    padding:140px 5%;
+
+    background:
+    linear-gradient(rgba(0,0,0,.78),rgba(0,0,0,.82)),
+    url("assets/images/cta-image.jpg");
+
+    background-size:cover;
+
+    background-position:center;
+
+    background-repeat:no-repeat;
+
+    background-attachment:scroll;
+
+}
+
+
+
+
+/* Overlay */
+
+.cta-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+    radial-gradient(circle at top,
+    rgba(255,214,10,.12),
+    transparent 60%);
+
+    pointer-events:none;
+
+}
+
+
+
+/* Content */
+
+.cta-content{
+
+    position:relative;
+
+    z-index:2;
+
+    max-width:900px;
+
+    margin:auto;
+
+    text-align:center;
+
+}
+
+
+
+.cta-content h2{
+
+    margin-top:20px;
+
+    font-family:"Bebas Neue",sans-serif;
+
+    font-size:clamp(55px,6vw,82px);
+
+    line-height:1;
+
+    color:#fff;
+
+}
+
+
+
+.cta-content h2 span{
+
+    color:#ffd60a;
+
+}
+
+
+
+.cta-content p{
+
+    margin:30px auto 45px;
+
+    max-width:700px;
+
+    color:#d5d5d5;
+
+    font-size:18px;
+
+    line-height:1.9;
+
+}
+
+
+
+/* Buttons */
+
+.cta-buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+}
+
+
+
+/* Primary */
+
+.cta-buttons .btn-primary{
+
+    padding:18px 42px;
+
+    border-radius:60px;
+
+    background:#ffd60a;
+
+    color:#111;
+
+    font-weight:700;
+
+    text-decoration:none;
+
+    transition:.35s ease;
+
+}
+
+
+
+.cta-buttons .btn-primary:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:
+
+    0 18px 40px rgba(255,214,10,.35);
+
+}
+
+
+
+/* Secondary */
+
+.cta-buttons .btn-secondary{
+
+    padding:18px 42px;
+
+    border-radius:60px;
+
+    border:2px solid #ffd60a;
+
+    color:#ffd60a;
+
+    text-decoration:none;
+
+    font-weight:700;
+
+    transition:.35s ease;
+
+}
+
+
+
+.cta-buttons .btn-secondary:hover{
+
+    background:#ffd60a;
+
+    color:#111;
+
+    transform:translateY(-6px);
+
+}
+
+
+
+/* Animated Border */
+
+.cta::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:15px;
+
+    border:1px solid rgba(255,214,10,.15);
+
+    border-radius:28px;
+
+}
+
+
+
+/* Background Zoom Animation */
+
+@keyframes ctaZoom{
+
+    0%{
+
+        background-size:100%;
+
+    }
+
+    50%{
+
+        background-size:108%;
+
+    }
+
+    100%{
+
+        background-size:100%;
+
+    }
+
+}
+
+.cta{
+
+    animation:ctaZoom 18s ease-in-out infinite;
+
+}
+
+
+
+/* Floating Glow */
+
+.cta::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:350px;
+
+    height:350px;
+
+    border-radius:50%;
+
+    background:rgba(255,214,10,.08);
+
+    filter:blur(100px);
+
+    top:-120px;
+
+    right:-80px;
+
+}
+
+
+
+/* Reveal */
+
+.cta-content{
+
+    
+
+    transform:translateY(60px);
+
+    transition:
+
+    opacity .9s ease,
+
+    transform .9s ease;
+
+}
+
+
+
+.cta-content.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+.cta-content h2{
+
+    text-shadow:
+    0 0 20px rgba(255,214,10,.12);
+
+}
+
+.cta-buttons .btn-primary{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.cta-buttons .btn-primary::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:-120%;
+
+    width:60%;
+    height:100%;
+
+    background:
+    linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.45),
+        transparent
+    );
+
+    transition:.8s;
+}
+
+.cta-buttons .btn-primary:hover::before{
+
+    left:150%;
+
+}
+/* ================= FOOTER ================= */
+
+.footer{
+
+    position:relative;
+
+    padding:90px 5% 0;
+
+    background:#080808;
+
+    overflow:hidden;
+
+    border-top:1px solid rgba(255,214,10,.08);
+
+}
+
+
+
+/* Background Glow */
+
+.footer::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:-180px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:550px;
+
+    height:550px;
+
+    border-radius:50%;
+
+    background:rgba(255,214,10,.05);
+
+    filter:blur(120px);
+
+    pointer-events:none;
+
+}
+
+
+
+/* ================= CONTAINER ================= */
+
+.footer-container{
+
+    position:relative;
+
+    z-index:2;
+
+    max-width:1400px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:2fr 1fr 1fr 1.2fr;
+
+    gap:50px;
+
+}
+
+
+
+/* ================= LOGO ================= */
+
+.footer-logo{
+
+    display:inline-block;
+
+    margin-bottom:25px;
+
+    font-family:"Bebas Neue",sans-serif;
+
+    font-size:42px;
+
+    text-decoration:none;
+
+    color:#fff;
+
+    letter-spacing:2px;
+
+}
+
+
+
+.footer-logo span{
+
+    color:#ffd60a;
+
+}
+
+
+
+.footer-column p{
+
+    color:#9a9a9a;
+
+    line-height:1.9;
+
+    margin-bottom:30px;
+
+}
+
+
+
+/* ================= HEADINGS ================= */
+
+.footer-column h3{
+
+    color:#fff;
+
+    margin-bottom:28px;
+
+    font-size:22px;
+
+    position:relative;
+
+}
+
+
+
+.footer-column h3::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-10px;
+
+    width:45px;
+
+    height:3px;
+
+    background:#ffd60a;
+
+    border-radius:50px;
+
+}
+
+
+
+/* ================= LINKS ================= */
+
+.footer-column ul{
+
+    list-style:none;
+
+}
+
+
+
+.footer-column ul li{
+
+    margin-bottom:16px;
+
+}
+
+
+
+.footer-column ul li a{
+
+    color:#9c9c9c;
+
+    text-decoration:none;
+
+    transition:.35s;
+
+    position:relative;
+
+}
+
+
+
+.footer-column ul li a::before{
+
+    content:"";
+
+    position:absolute;
+
+    bottom:-3px;
+
+    left:0;
+
+    width:0;
+
+    height:2px;
+
+    background:#ffd60a;
+
+    transition:.35s;
+
+}
+
+
+
+.footer-column ul li a:hover{
+
+    color:#ffd60a;
+
+    padding-left:8px;
+
+}
+
+
+
+.footer-column ul li a:hover::before{
+
+    width:100%;
+
+}
+
+
+
+/* ================= CONTACT ================= */
+
+.footer-contact li{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:14px;
+
+    color:#9c9c9c;
+
+}
+
+
+
+.footer-contact i{
+
+    color:#ffd60a;
+
+    margin-top:4px;
+
+}
+
+
+
+/* ================= SOCIAL ================= */
+
+.footer-social{
+
+    display:flex;
+
+    gap:15px;
+
+}
+
+
+
+.footer-social a{
+
+    width:48px;
+
+    height:48px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-decoration:none;
+
+    color:#ffd60a;
+
+    background:#141414;
+
+    border:1px solid rgba(255,214,10,.18);
+
+    transition:.35s;
+
+}
+
+
+
+.footer-social a:hover{
+
+    background:#ffd60a;
+
+    color:#111;
+
+    transform:translateY(-6px) rotate(8deg);
+
+    box-shadow:0 15px 30px rgba(255,214,10,.25);
+
+}
+
+
+
+/* ================= BOTTOM ================= */
+
+.footer-bottom{
+
+    margin-top:70px;
+
+    padding:28px 0;
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+    text-align:center;
+
+}
+
+
+
+.footer-bottom p{
+
+    color:#888;
+
+    font-size:15px;
+
+}
+
+
+
+.footer-bottom span{
+
+    color:#ffd60a;
+
+}
+
+
+
+/* ================= REVEAL ================= */
+
+.footer-column{
+
+
+    transform:translateY(60px);
+
+    transition:
+
+    opacity .8s ease,
+
+    transform .8s ease;
+
+}
+
+
+
+.footer-column.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+/* ================= WHATSAPP BUTTON ================= */
+
+.whatsapp-btn{
+
+position:fixed;
+
+right:28px;
+
+bottom:28px;
+
+display:flex;
+
+align-items:center;
+
+gap:12px;
+
+padding:14px 18px;
+
+background:linear-gradient(135deg,#25D366,#128C7E);
+
+color:#fff;
+
+border-radius:999px;
+
+text-decoration:none;
+
+font-weight:600;
+
+font-size:.95rem;
+
+box-shadow:
+0 10px 35px rgba(37,211,102,.35);
+
+z-index:9999;
+
+overflow:hidden;
+
+transition:
+transform .35s,
+box-shadow .35s;
+
+}
+
+.whatsapp-btn::before{
+
+content:"";
+
+position:absolute;
+
+inset:0;
+
+background:
+
+linear-gradient(
+120deg,
+transparent,
+rgba(255,255,255,.28),
+transparent
+);
+
+transform:translateX(-120%);
+
+transition:transform .8s;
+
+}
+
+.whatsapp-btn:hover{
+
+transform:translateY(-6px) scale(1.04);
+
+box-shadow:
+0 15px 45px rgba(37,211,102,.5);
+
+}
+
+.whatsapp-btn:hover::before{
+
+transform:translateX(120%);
+
+}
+
+.whatsapp-btn svg{
+
+width:26px;
+
+height:26px;
+
+flex-shrink:0;
+
+}
+
+.whatsapp-btn span{
+
+white-space:nowrap;
+
+}
+.cta-buttons{
+
+    gap:14px;
+    margin-top:24px;
+
+}
+
+.cta-buttons a{
+
+    width:100%;
+
+}
