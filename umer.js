@@ -1424,3 +1424,111 @@ function resetBMI(){
     bmiTip.textContent="Enter your height and weight to calculate your BMI.";
 
 }
+/* ================= BRANCH SELECTOR ================= */
+
+const branchSelector = document.getElementById("branchSelector");
+const branchSelect = document.getElementById("branchSelect");
+const continueBtn = document.getElementById("continueBtn");
+
+const savedBranch = sessionStorage.getItem("selectedBranch");
+
+if (savedBranch) {
+    branchSelector.style.display = "none";
+}
+
+continueBtn.disabled = true;
+
+continueBtn.addEventListener("click", () => {
+
+    const branch = branchSelect.value;
+
+    if (!branch) {
+        alert("Please select your branch.");
+        return;
+    }
+
+    sessionStorage.setItem("selectedBranch", branch);
+
+    branchSelector.style.display = "none";
+
+});
+
+branchSelect.addEventListener("change", () => {
+
+    continueBtn.disabled = branchSelect.value === "";
+
+});
+
+
+/* ================= WHATSAPP MEMBERSHIP ================= */
+
+const pricingButtons = document.querySelectorAll(".pricing-btn");
+
+const branchNumbers = {
+
+    Clifton: "923212283944",
+
+    DHA: "923002222222",
+
+    Gulshan: "923003333333",
+
+    Nazimabad: "923004444444"
+
+};
+
+pricingButtons.forEach(button => {
+
+    button.addEventListener("click", function (e) {
+
+        e.preventDefault();
+
+      const selectedBranch = sessionStorage.getItem("selectedBranch");
+        if (!selectedBranch) {
+
+            alert("Please select your branch first.");
+
+            branchSelector.style.display = "flex";
+
+            return;
+
+        }
+
+        const number = branchNumbers[selectedBranch];
+
+        const selectedPlan = this.dataset.plan;
+
+        const bmi = document.getElementById("bmiValue").innerText.trim();
+
+        const category = document.getElementById("bmiCategory").innerText.trim();
+
+        let bmiMessage = "";
+
+        if (bmi !== "--" && category !== "Your BMI") {
+
+            bmiMessage = `
+
+📊 BMI: ${bmi}
+
+🏷️ Category: ${category}`;
+
+        }
+
+        const message = `Assalam-o-Alaikum,
+
+I want to join Pure Fitness Gym.
+
+🏢 Branch: ${selectedBranch}
+
+💪 Selected Plan: ${selectedPlan}${bmiMessage}
+
+Kindly share the registration process.
+
+Thank you.`;
+
+        const url = `https://wa.me/${number}?text=${encodeURIComponent(message)}`;
+
+        window.open(url, "_blank");
+
+    });
+
+});

@@ -49,13 +49,43 @@
     <link rel="stylesheet" href="umer-responsive.css">
 
     <!-- Font Awesome connect -->
-     <link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
 </head>
 
 <body>
 
+    <!-- ================= BRANCH SELECTOR ================= -->
+
+    <div class="branch-selector" id="branchSelector">
+
+        <div class="branch-box">
+
+            <h2>Select Your Branch</h2>
+
+            <p>Please choose your nearest branch.</p>
+
+            <select id="branchSelect">
+
+                <option value="">-- Select Branch --</option>
+
+                <option value="Clifton">Clifton</option>
+
+                <option value="DHA">DHA</option>
+
+                <option value="Gulshan">Gulshan</option>
+
+                <option value="Nazimabad">Nazimabad</option>
+
+            </select>
+
+            <button id="continueBtn">
+                Continue
+            </button>
+
+        </div>
+
+    </div>
     <!-- ==========================================
                     HEADER
     =========================================== -->
@@ -496,221 +526,203 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
 
         </section>
-<!-- ================= BMI CALCULATOR ================= -->
+        <!-- ================= BMI CALCULATOR ================= -->
 
-<section class="bmi" id="bmi">
+        <section class="bmi" id="bmi">
 
-    <div class="section-heading">
+            <div class="section-heading">
 
-        <span class="section-tag">
-            FITNESS TOOL
-        </span>
-
-        <h2>
-
-            BMI
-            <span>CALCULATOR</span>
-
-        </h2>
-
-        <p>
-
-            Calculate your Body Mass Index instantly and receive
-            personalized health insights.
-
-        </p>
-
-    </div>
-
-
-
-    <div class="bmi-card">
-
-        <!-- Inputs -->
-
-        <div class="bmi-inputs">
-
-            <div class="input-box">
-
-                <label>
-
-                    Height (cm)
-
-                </label>
-
-                <input
-                    type="number"
-                    id="height"
-                    placeholder="170"
-                    min="100"
-                    max="250"
-                >
-
-            </div>
-
-
-
-            <div class="input-box">
-
-                <label>
-
-                    Weight (kg)
-
-                </label>
-
-                <input
-                    type="number"
-                    id="weight"
-                    placeholder="70"
-                    min="20"
-                    max="300"
-                >
-
-            </div>
-
-        </div>
-
-
-
-        <!-- Buttons -->
-
-        <div class="bmi-buttons">
-
-            <button
-                id="calculateBtn"
-                class="btn-primary">
-
-                Calculate BMI
-
-            </button>
-
-            <button
-                id="resetBtn"
-                class="btn-secondary">
-
-                Reset
-
-            </button>
-
-        </div>
-
-
-
-        <!-- Result -->
-
-        <div class="bmi-result">
-
-            <div class="bmi-number">
-
-                <h3 id="bmiValue">
-
-                    --
-
-                </h3>
-
-                <span id="bmiCategory">
-
-                    Your BMI
-
+                <span class="section-tag">
+                    FITNESS TOOL
                 </span>
 
-            </div>
+                <h2>
 
+                    BMI
+                    <span>CALCULATOR</span>
 
+                </h2>
 
-            <!-- Progress -->
+                <p>
 
-            <div class="bmi-progress">
-
-                <div
-                    class="bmi-progress-fill"
-                    id="progressFill">
-
-                </div>
-
-            </div>
-
-
-
-            <!-- Stats -->
-
-            <div class="bmi-stats">
-
-                <div class="bmi-stat">
-
-                    <h4>
-
-                        Ideal Weight
-
-                    </h4>
-
-                    <span id="idealWeight">
-
-                        --
-
-                    </span>
-
-                </div>
-
-
-
-                <div class="bmi-stat">
-
-                    <h4>
-
-                        Water Intake
-
-                    </h4>
-
-                    <span id="waterIntake">
-
-                        --
-
-                    </span>
-
-                </div>
-
-
-
-                <div class="bmi-stat">
-
-                    <h4>
-
-                        Daily Calories
-
-                    </h4>
-
-                    <span id="dailyCalories">
-
-                        --
-
-                    </span>
-
-                </div>
-
-            </div>
-
-
-
-            <!-- Tip -->
-
-            <div class="bmi-tip">
-
-                <i class="fa-solid fa-lightbulb"></i>
-
-                <p id="bmiTip">
-
-                    Enter your height and weight to calculate your BMI.
+                    Calculate your Body Mass Index instantly and receive
+                    personalized health insights.
 
                 </p>
 
             </div>
 
-        </div>
 
-    </div>
 
-</section>
+            <div class="bmi-card">
+
+                <!-- Inputs -->
+
+                <div class="bmi-inputs">
+
+                    <div class="input-box">
+
+                        <label>
+
+                            Height (cm)
+
+                        </label>
+
+                        <input type="number" id="height" placeholder="170" min="100" max="250">
+
+                    </div>
+
+
+
+                    <div class="input-box">
+
+                        <label>
+
+                            Weight (kg)
+
+                        </label>
+
+                        <input type="number" id="weight" placeholder="70" min="20" max="300">
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Buttons -->
+
+                <div class="bmi-buttons">
+
+                    <button id="calculateBtn" class="btn-primary">
+
+                        Calculate BMI
+
+                    </button>
+
+                    <button id="resetBtn" class="btn-secondary">
+
+                        Reset
+
+                    </button>
+
+                </div>
+
+
+
+                <!-- Result -->
+
+                <div class="bmi-result">
+
+                    <div class="bmi-number">
+
+                        <h3 id="bmiValue">
+
+                            --
+
+                        </h3>
+
+                        <span id="bmiCategory">
+
+                            Your BMI
+
+                        </span>
+
+                    </div>
+
+
+
+                    <!-- Progress -->
+
+                    <div class="bmi-progress">
+
+                        <div class="bmi-progress-fill" id="progressFill">
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- Stats -->
+
+                    <div class="bmi-stats">
+
+                        <div class="bmi-stat">
+
+                            <h4>
+
+                                Ideal Weight
+
+                            </h4>
+
+                            <span id="idealWeight">
+
+                                --
+
+                            </span>
+
+                        </div>
+
+
+
+                        <div class="bmi-stat">
+
+                            <h4>
+
+                                Water Intake
+
+                            </h4>
+
+                            <span id="waterIntake">
+
+                                --
+
+                            </span>
+
+                        </div>
+
+
+
+                        <div class="bmi-stat">
+
+                            <h4>
+
+                                Daily Calories
+
+                            </h4>
+
+                            <span id="dailyCalories">
+
+                                --
+
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- Tip -->
+
+                    <div class="bmi-tip">
+
+                        <i class="fa-solid fa-lightbulb"></i>
+
+                        <p id="bmiTip">
+
+                            Enter your height and weight to calculate your BMI.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
         <!-- ================= MEMBERSHIP SECTION ================= -->
 
         <section class="membership" id="membership">
@@ -772,10 +784,9 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
                     </ul>
 
 
-                    <a href="#" class="pricing-btn">
+                    <a href="#" class="pricing-btn" data-plan="Basic Plan - Rs. 5,000/month">
                         JOIN NOW
                     </a>
-
 
                 </div>
 
@@ -819,7 +830,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
                     </ul>
 
 
-                    <a href="#" class="pricing-btn">
+                    <a href="#" class="pricing-btn" data-plan="Pro Plan - Rs. 8,000/month">
                         JOIN NOW
                     </a>
 
@@ -862,10 +873,9 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
                     </ul>
 
 
-                    <a href="#" class="pricing-btn">
+                    <a href="#" class="pricing-btn" data-plan="Elite Plan - Rs. 12,000/month">
                         JOIN NOW
                     </a>
-
 
                 </div>
 
@@ -875,100 +885,358 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
 
         </section>
-<!-- ================= TESTIMONIALS V2 ================= -->
+        <!-- ================= TESTIMONIALS V2 ================= -->
 
-<section class="testimonials" id="testimonials">
+        <section class="testimonials" id="testimonials">
 
-    <div class="testimonials-header">
+            <div class="testimonials-header">
 
-        <span class="section-tag">
-            TESTIMONIALS
-        </span>
+                <span class="section-tag">
+                    TESTIMONIALS
+                </span>
 
-        <h2>
-            WHAT OUR
-            <span>MEMBERS SAY</span>
-        </h2>
+                <h2>
+                    WHAT OUR
+                    <span>MEMBERS SAY</span>
+                </h2>
 
-        <p>
-            Hear what our members have to say about their journey,
-            progress, and experience with ApexForge.
-        </p>
+                <p>
+                    Hear what our members have to say about their journey,
+                    progress, and experience with ApexForge.
+                </p>
 
-    </div>
-
-
-    <div class="testimonial-carousel">
+            </div>
 
 
-        <!-- Previous Button -->
+            <div class="testimonial-carousel">
 
-        <button class="carousel-btn prev-btn" aria-label="Previous Testimonial">
 
-            <svg width="22" height="22" viewBox="0 0 24 24">
+                <!-- Previous Button -->
 
-                <path
-                    d="M15 18L9 12L15 6"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2.4"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                />
+                <button class="carousel-btn prev-btn" aria-label="Previous Testimonial">
 
-            </svg>
+                    <svg width="22" height="22" viewBox="0 0 24 24">
 
-        </button>
+                        <path d="M15 18L9 12L15 6" fill="none" stroke="currentColor" stroke-width="2.4"
+                            stroke-linecap="round" stroke-linejoin="round" />
+
+                    </svg>
+
+                </button>
 
 
 
-        <!-- Cards -->
+                <!-- Cards -->
 
 
-        <div class="carousel-track-container">
+                <div class="carousel-track-container">
 
-            <div class="carousel-track">
+                    <div class="carousel-track">
 
 
 
-                <!-- CARD 1 -->
+                        <!-- CARD 1 -->
 
-                <article class="testimonial-card active">
+                        <article class="testimonial-card active">
 
-                    <div class="quote-icon">
+                            <div class="quote-icon">
 
-                        “
+                                “
+
+                            </div>
+
+                            <div class="rating">
+
+                                ★★★★★
+
+                            </div>
+
+                            <p>
+
+                                Joining ApexForge completely transformed my
+                                lifestyle. The trainers are supportive,
+                                the environment is motivating, and every
+                                workout pushes me to become stronger.
+
+                            </p>
+
+                            <div class="client-info">
+
+                                <h3>
+
+                                    Ahmed Khan
+
+                                </h3>
+
+                                <span>
+
+                                    Member Since 2024
+
+                                </span>
+
+                            </div>
+
+                        </article>
+
+
+
+
+
+                        <!-- CARD 2 -->
+
+                        <article class="testimonial-card">
+
+                            <div class="quote-icon">
+
+                                “
+
+                            </div>
+
+                            <div class="rating">
+
+                                ★★★★★
+
+                            </div>
+
+                            <p>
+
+                                I've trained in several gyms before,
+                                but ApexForge stands out because of
+                                its premium equipment and experienced
+                                coaching staff.
+
+                            </p>
+
+                            <div class="client-info">
+
+                                <h3>
+
+                                    Hassan Ali
+
+                                </h3>
+
+                                <span>
+
+                                    Fitness Enthusiast
+
+                                </span>
+
+                            </div>
+
+                        </article>
+
+
+
+
+
+
+                        <!-- CARD 3 -->
+
+                        <article class="testimonial-card">
+
+                            <div class="quote-icon">
+
+                                “
+
+                            </div>
+
+                            <div class="rating">
+
+                                ★★★★★
+
+                            </div>
+
+                            <p>
+
+                                The personal coaching helped me lose
+                                weight while building muscle. I feel
+                                healthier, stronger and far more
+                                confident than ever before.
+
+                            </p>
+
+                            <div class="client-info">
+
+                                <h3>
+
+                                    Muhammad Usman
+
+                                </h3>
+
+                                <span>
+
+                                    Elite Member
+
+                                </span>
+
+                            </div>
+
+                        </article>
+
+
+
+
+
+                        <!-- CARD 4 -->
+
+                        <article class="testimonial-card">
+
+                            <div class="quote-icon">
+
+                                “
+
+                            </div>
+
+                            <div class="rating">
+
+                                ★★★★★
+
+                            </div>
+
+                            <p>
+
+                                From day one I felt welcomed.
+                                Every trainer genuinely cares
+                                about your progress and keeps
+                                you motivated every session.
+
+                            </p>
+
+                            <div class="client-info">
+
+                                <h3>
+
+                                    Zain Ahmed
+
+                                </h3>
+
+                                <span>
+
+                                    Athlete
+
+                                </span>
+
+                            </div>
+
+                        </article>
+
+
 
                     </div>
 
-                    <div class="rating">
+                </div>
 
-                        ★★★★★
+
+
+                <!-- Next Button -->
+
+                <button class="carousel-btn next-btn" aria-label="Next Testimonial">
+
+                    <svg width="22" height="22" viewBox="0 0 24 24">
+
+                        <path d="M9 18L15 12L9 6" fill="none" stroke="currentColor" stroke-width="2.4"
+                            stroke-linecap="round" stroke-linejoin="round" />
+
+                    </svg>
+
+                </button>
+
+            </div>
+
+
+
+            <!-- DOTS -->
+
+            <div class="testimonial-dots">
+
+                <button class="dot active"></button>
+
+                <button class="dot"></button>
+
+                <button class="dot"></button>
+
+                <button class="dot"></button>
+
+            </div>
+
+        </section>
+        <!-- ================= TRAINERS SECTION ================= -->
+
+        <section class="trainers" id="trainers">
+
+            <div class="trainers-header">
+
+                <span class="section-tag">
+                    EXPERT COACHES
+                </span>
+
+                <h2>
+                    MEET OUR
+                    <span>TRAINERS</span>
+                </h2>
+
+                <p>
+                    Train with certified professionals dedicated to helping you
+                    achieve your goals faster, safer, and smarter.
+                </p>
+
+            </div>
+
+
+
+            <div class="trainers-grid">
+
+
+                <!-- Trainer 1 -->
+
+                <article class="trainer-card">
+
+                    <div class="trainer-image">
+
+                        <img src="assets/images/trainer-1.avif" alt="Strength Coach">
+
+                        <div class="trainer-overlay">
+
+                            <div class="trainer-social">
+
+                                <a href="#" aria-label="Instagram">
+
+                                    <i class="fa-brands fa-instagram"></i>
+
+                                </a>
+
+                                <a href="#" aria-label="Facebook">
+
+                                    <i class="fa-brands fa-facebook-f"></i>
+
+                                </a>
+
+                                <a href="#" aria-label="LinkedIn">
+
+                                    <i class="fa-brands fa-linkedin-in"></i>
+
+                                </a>
+
+                            </div>
+
+                        </div>
 
                     </div>
 
-                    <p>
 
-                        Joining ApexForge completely transformed my
-                        lifestyle. The trainers are supportive,
-                        the environment is motivating, and every
-                        workout pushes me to become stronger.
+                    <div class="trainer-content">
 
-                    </p>
-
-                    <div class="client-info">
+                        <span class="trainer-badge">
+                            8+ Years Experience
+                        </span>
 
                         <h3>
-
-                            Ahmed Khan
-
+                            Alex Carter
                         </h3>
 
-                        <span>
-
-                            Member Since 2024
-
-                        </span>
+                        <p>
+                            Strength & Conditioning Coach
+                        </p>
 
                     </div>
 
@@ -978,44 +1246,56 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
 
 
-                <!-- CARD 2 -->
+                <!-- Trainer 2 -->
 
-                <article class="testimonial-card">
+                <article class="trainer-card">
 
-                    <div class="quote-icon">
+                    <div class="trainer-image">
 
-                        “
+                        <img src="assets/images/trainer-2.avif" alt="Fitness Trainer">
+
+                        <div class="trainer-overlay">
+
+                            <div class="trainer-social">
+
+                                <a href="#">
+
+                                    <i class="fa-brands fa-instagram"></i>
+
+                                </a>
+
+                                <a href="#">
+
+                                    <i class="fa-brands fa-facebook-f"></i>
+
+                                </a>
+
+                                <a href="#">
+
+                                    <i class="fa-brands fa-linkedin-in"></i>
+
+                                </a>
+
+                            </div>
+
+                        </div>
 
                     </div>
 
-                    <div class="rating">
 
-                        ★★★★★
+                    <div class="trainer-content">
 
-                    </div>
-
-                    <p>
-
-                        I've trained in several gyms before,
-                        but ApexForge stands out because of
-                        its premium equipment and experienced
-                        coaching staff.
-
-                    </p>
-
-                    <div class="client-info">
+                        <span class="trainer-badge">
+                            Certified Trainer
+                        </span>
 
                         <h3>
-
-                            Hassan Ali
-
+                            Ethan Brooks
                         </h3>
 
-                        <span>
-
-                            Fitness Enthusiast
-
-                        </span>
+                        <p>
+                            Functional Fitness Specialist
+                        </p>
 
                     </div>
 
@@ -1025,193 +1305,307 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
 
 
+                <!-- Trainer 3 -->
 
-                <!-- CARD 3 -->
+                <article class="trainer-card">
 
-                <article class="testimonial-card">
+                    <div class="trainer-image">
 
-                    <div class="quote-icon">
+                        <img src="assets/images/trainer-3.avif" alt="Personal Trainer">
 
-                        “
+                        <div class="trainer-overlay">
+
+                            <div class="trainer-social">
+
+                                <a href="#">
+
+                                    <i class="fa-brands fa-instagram"></i>
+
+                                </a>
+
+                                <a href="#">
+
+                                    <i class="fa-brands fa-facebook-f"></i>
+
+                                </a>
+
+                                <a href="#">
+
+                                    <i class="fa-brands fa-linkedin-in"></i>
+
+                                </a>
+
+                            </div>
+
+                        </div>
 
                     </div>
 
-                    <div class="rating">
 
-                        ★★★★★
+                    <div class="trainer-content">
 
-                    </div>
-
-                    <p>
-
-                        The personal coaching helped me lose
-                        weight while building muscle. I feel
-                        healthier, stronger and far more
-                        confident than ever before.
-
-                    </p>
-
-                    <div class="client-info">
+                        <span class="trainer-badge">
+                            Nutrition Expert
+                        </span>
 
                         <h3>
-
-                            Muhammad Usman
-
+                            James Wilson
                         </h3>
 
-                        <span>
-
-                            Elite Member
-
-                        </span>
+                        <p>
+                            Personal Trainer & Nutrition Coach
+                        </p>
 
                     </div>
 
                 </article>
-
-
-
-
-
-                <!-- CARD 4 -->
-
-                <article class="testimonial-card">
-
-                    <div class="quote-icon">
-
-                        “
-
-                    </div>
-
-                    <div class="rating">
-
-                        ★★★★★
-
-                    </div>
-
-                    <p>
-
-                        From day one I felt welcomed.
-                        Every trainer genuinely cares
-                        about your progress and keeps
-                        you motivated every session.
-
-                    </p>
-
-                    <div class="client-info">
-
-                        <h3>
-
-                            Zain Ahmed
-
-                        </h3>
-
-                        <span>
-
-                            Athlete
-
-                        </span>
-
-                    </div>
-
-                </article>
-
 
 
             </div>
 
-        </div>
+        </section>
+        <!-- ================= CONTACT ================= -->
+
+        <section class="contact" id="contact">
+
+            <div class="contact-container">
+
+                <!-- LEFT -->
+
+                <div class="contact-content">
+
+                    <span class="section-tag">
+                        CONTACT US
+                    </span>
+
+                    <h2>
+                        START YOUR
+                        <span>FITNESS JOURNEY</span>
+                    </h2>
+
+                    <p>
+                        Ready to transform your body? Fill out the form and our team
+                        will contact you within 24 hours.
+                    </p>
+
+                    <div class="contact-info">
+
+                        <div class="contact-box">
+
+                            <i class="fa-solid fa-phone"></i>
+
+                            <div>
+
+                                <h4>Phone</h4>
+
+                                <span>+92 300 1234567</span>
+
+                            </div>
+
+                        </div>
 
 
 
-        <!-- Next Button -->
+                        <div class="contact-box">
 
-        <button class="carousel-btn next-btn" aria-label="Next Testimonial">
+                            <i class="fa-solid fa-envelope"></i>
 
-            <svg width="22" height="22" viewBox="0 0 24 24">
+                            <div>
 
-                <path
-                    d="M9 18L15 12L9 6"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2.4"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                />
+                                <h4>Email</h4>
 
-            </svg>
+                                <span>info@apexforge.com</span>
 
-        </button>
+                            </div>
 
-    </div>
+                        </div>
 
 
 
-    <!-- DOTS -->
+                        <div class="contact-box">
 
-    <div class="testimonial-dots">
+                            <i class="fa-solid fa-location-dot"></i>
 
-        <button class="dot active"></button>
+                            <div>
 
-        <button class="dot"></button>
+                                <h4>Location</h4>
 
-        <button class="dot"></button>
+                                <span>Karachi, Pakistan</span>
 
-        <button class="dot"></button>
+                            </div>
 
-    </div>
+                        </div>
 
-</section>
-<!-- ================= TRAINERS SECTION ================= -->
+                    </div>
 
-<section class="trainers" id="trainers">
-
-    <div class="trainers-header">
-
-        <span class="section-tag">
-            EXPERT COACHES
-        </span>
-
-        <h2>
-            MEET OUR
-            <span>TRAINERS</span>
-        </h2>
-
-        <p>
-            Train with certified professionals dedicated to helping you
-            achieve your goals faster, safer, and smarter.
-        </p>
-
-    </div>
+                </div>
 
 
 
-    <div class="trainers-grid">
 
 
-        <!-- Trainer 1 -->
+                <!-- RIGHT -->
 
-        <article class="trainer-card">
+                <form id="contactForm" class="contact-form">
 
-            <div class="trainer-image">
+                    <div class="input-group">
 
-                <img
-                src="assets/images/trainer-1.avif"
-                alt="Strength Coach">
+                        <input type="text" id="name" name="user_name" placeholder="Full Name" required>
 
-                <div class="trainer-overlay">
+                    </div>
 
-                    <div class="trainer-social">
 
-                        <a href="#" aria-label="Instagram">
 
-                            <i class="fa-brands fa-instagram"></i>
+                    <div class="input-group">
 
-                        </a>
+                        <input type="email" id="email" name="user_email" placeholder="Email Address" required>
+
+                    </div>
+
+
+
+                    <div class="input-group">
+
+                        <input type="tel" id="phone" name="user_phone" placeholder="Phone Number" required>
+
+                    </div>
+
+
+
+                    <div class="input-group">
+
+                        <select id="goal" name="fitness_goal" required>
+
+                            <option value="">
+                                Select Your Goal
+                            </option>
+
+                            <option>
+                                Weight Loss
+                            </option>
+
+                            <option>
+                                Muscle Gain
+                            </option>
+
+                            <option>
+                                Strength Training
+                            </option>
+
+                            <option>
+                                General Fitness
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <div class="input-group">
+
+                        <textarea id="message" name="message" rows="6" placeholder="Tell us about your fitness goals..."
+                            required></textarea>
+
+                    </div>
+
+
+
+                    <button type="submit" class="btn-primary contact-btn">
+
+                        Send Message
+
+                    </button>
+
+                </form>
+
+            </div>
+
+        </section>
+        <!-- ================= CTA ================= -->
+
+        <section class="cta" id="cta">
+
+            <div class="cta-overlay"></div>
+
+            <div class="cta-content">
+
+                <span class="section-tag">
+
+                    LIMITED TIME OFFER
+
+                </span>
+
+                <h2>
+
+                    READY TO BUILD YOUR
+
+                    <span>STRONGEST SELF?</span>
+
+                </h2>
+
+                <p>
+
+                    Join hundreds of members achieving real results with expert
+                    coaching, premium equipment, and a motivating community.
+
+                </p>
+
+                <div class="cta-buttons">
+
+                    <a href="#contact" class="btn-primary">
+
+                        Join Now
+
+                    </a>
+
+                    <a href="#pricing" class="btn-secondary">
+
+                        View Membership
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+        <!-- ================= FOOTER ================= -->
+
+        <footer class="footer">
+
+            <div class="footer-container">
+
+
+                <!-- COLUMN 1 -->
+
+                <div class="footer-column">
+
+                    <a href="#" class="footer-logo">
+
+                        Apex<span>Forge</span>
+
+                    </a>
+
+                    <p>
+
+                        Transform your body, strengthen your mind,
+                        and unlock your full potential with expert
+                        coaching and world-class facilities.
+
+                    </p>
+
+                    <div class="footer-social">
 
                         <a href="#" aria-label="Facebook">
 
                             <i class="fa-brands fa-facebook-f"></i>
+
+                        </a>
+
+                        <a href="#" aria-label="Instagram">
+
+                            <i class="fa-brands fa-instagram"></i>
 
                         </a>
 
@@ -1221,580 +1615,149 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
                         </a>
 
+                        <a href="#" aria-label="YouTube">
+
+                            <i class="fa-brands fa-youtube"></i>
+
+                        </a>
+
                     </div>
 
                 </div>
 
+
+
+                <!-- COLUMN 2 -->
+
+                <div class="footer-column">
+
+                    <h3>
+
+                        Quick Links
+
+                    </h3>
+
+                    <ul>
+
+                        <li><a href="#hero">Home</a></li>
+
+                        <li><a href="#about">About</a></li>
+
+                        <li><a href="#services">Services</a></li>
+
+                        <li><a href="#pricing">Pricing</a></li>
+
+                        <li><a href="#contact">Contact</a></li>
+
+                    </ul>
+
+                </div>
+
+
+
+                <!-- COLUMN 3 -->
+
+                <div class="footer-column">
+
+                    <h3>
+
+                        Services
+
+                    </h3>
+
+                    <ul>
+
+                        <li><a href="#">Personal Training</a></li>
+
+                        <li><a href="#">Weight Loss</a></li>
+
+                        <li><a href="#">Muscle Building</a></li>
+
+                        <li><a href="#">Nutrition Plans</a></li>
+
+                        <li><a href="#">Cardio Fitness</a></li>
+
+                    </ul>
+
+                </div>
+
+
+
+                <!-- COLUMN 4 -->
+
+                <div class="footer-column">
+
+                    <h3>
+
+                        Contact
+
+                    </h3>
+
+                    <ul class="footer-contact">
+
+                        <li>
+
+                            <i class="fa-solid fa-location-dot"></i>
+
+                            Karachi, Pakistan
+
+                        </li>
+
+                        <li>
+
+                            <i class="fa-solid fa-phone"></i>
+
+                            +92 300 1234567
+
+                        </li>
+
+                        <li>
+
+                            <i class="fa-solid fa-envelope"></i>
+
+                            info@apexforge.com
+
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
             </div>
 
 
-            <div class="trainer-content">
 
-                <span class="trainer-badge">
-                    8+ Years Experience
-                </span>
+            <!-- Bottom -->
 
-                <h3>
-                    Alex Carter
-                </h3>
+            <div class="footer-bottom">
 
                 <p>
-                    Strength & Conditioning Coach
+
+                    © 2026 <span>ApexForge</span>. All Rights Reserved.
+
                 </p>
 
             </div>
 
-        </article>
-
-
-
-
-
-        <!-- Trainer 2 -->
-
-        <article class="trainer-card">
-
-            <div class="trainer-image">
-
-                <img
-                src="assets/images/trainer-2.avif"
-                alt="Fitness Trainer">
-
-                <div class="trainer-overlay">
-
-                    <div class="trainer-social">
-
-                        <a href="#">
-
-                            <i class="fa-brands fa-instagram"></i>
-
-                        </a>
-
-                        <a href="#">
-
-                            <i class="fa-brands fa-facebook-f"></i>
-
-                        </a>
-
-                        <a href="#">
-
-                            <i class="fa-brands fa-linkedin-in"></i>
-
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <div class="trainer-content">
-
-                <span class="trainer-badge">
-                    Certified Trainer
-                </span>
-
-                <h3>
-                    Ethan Brooks
-                </h3>
-
-                <p>
-                    Functional Fitness Specialist
-                </p>
-
-            </div>
-
-        </article>
-
-
-
-
-
-        <!-- Trainer 3 -->
-
-        <article class="trainer-card">
-
-            <div class="trainer-image">
-
-                <img
-                src="assets/images/trainer-3.avif"
-                alt="Personal Trainer">
-
-                <div class="trainer-overlay">
-
-                    <div class="trainer-social">
-
-                        <a href="#">
-
-                            <i class="fa-brands fa-instagram"></i>
-
-                        </a>
-
-                        <a href="#">
-
-                            <i class="fa-brands fa-facebook-f"></i>
-
-                        </a>
-
-                        <a href="#">
-
-                            <i class="fa-brands fa-linkedin-in"></i>
-
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <div class="trainer-content">
-
-                <span class="trainer-badge">
-                    Nutrition Expert
-                </span>
-
-                <h3>
-                    James Wilson
-                </h3>
-
-                <p>
-                    Personal Trainer & Nutrition Coach
-                </p>
-
-            </div>
-
-        </article>
-
-
-    </div>
-
-</section>
-<!-- ================= CONTACT ================= -->
-
-<section class="contact" id="contact">
-
-    <div class="contact-container">
-
-        <!-- LEFT -->
-
-        <div class="contact-content">
-
-            <span class="section-tag">
-                CONTACT US
-            </span>
-
-            <h2>
-                START YOUR
-                <span>FITNESS JOURNEY</span>
-            </h2>
-
-            <p>
-                Ready to transform your body? Fill out the form and our team
-                will contact you within 24 hours.
-            </p>
-
-            <div class="contact-info">
-
-                <div class="contact-box">
-
-                    <i class="fa-solid fa-phone"></i>
-
-                    <div>
-
-                        <h4>Phone</h4>
-
-                        <span>+92 300 1234567</span>
-
-                    </div>
-
-                </div>
-
-
-
-                <div class="contact-box">
-
-                    <i class="fa-solid fa-envelope"></i>
-
-                    <div>
-
-                        <h4>Email</h4>
-
-                        <span>info@apexforge.com</span>
-
-                    </div>
-
-                </div>
-
-
-
-                <div class="contact-box">
-
-                    <i class="fa-solid fa-location-dot"></i>
-
-                    <div>
-
-                        <h4>Location</h4>
-
-                        <span>Karachi, Pakistan</span>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-
-
-
-        <!-- RIGHT -->
-
-        <form id="contactForm" class="contact-form">
-
-            <div class="input-group">
-
-                <input
-                type="text"
-                id="name"
-                name="user_name"
-                placeholder="Full Name"
-                required>
-
-            </div>
-
-
-
-            <div class="input-group">
-
-                <input
-                type="email"
-                id="email"
-                name="user_email"
-                placeholder="Email Address"
-                required>
-
-            </div>
-
-
-
-            <div class="input-group">
-
-                <input
-                type="tel"
-                id="phone"
-                name="user_phone"
-                placeholder="Phone Number"
-                required>
-
-            </div>
-
-
-
-            <div class="input-group">
-
-                <select
-                id="goal"
-                name="fitness_goal"
-                required>
-
-                    <option value="">
-                        Select Your Goal
-                    </option>
-
-                    <option>
-                        Weight Loss
-                    </option>
-
-                    <option>
-                        Muscle Gain
-                    </option>
-
-                    <option>
-                        Strength Training
-                    </option>
-
-                    <option>
-                        General Fitness
-                    </option>
-
-                </select>
-
-            </div>
-
-
-
-            <div class="input-group">
-
-                <textarea
-                id="message"
-                name="message"
-                rows="6"
-                placeholder="Tell us about your fitness goals..."
-                required></textarea>
-
-            </div>
-
-
-
-            <button
-            type="submit"
-            class="btn-primary contact-btn">
-
-                Send Message
-
-            </button>
-
-        </form>
-
-    </div>
-
-</section>
-<!-- ================= CTA ================= -->
-
-<section class="cta" id="cta">
-
-    <div class="cta-overlay"></div>
-
-    <div class="cta-content">
-
-        <span class="section-tag">
-
-            LIMITED TIME OFFER
-
-        </span>
-
-        <h2>
-
-            READY TO BUILD YOUR
-
-            <span>STRONGEST SELF?</span>
-
-        </h2>
-
-        <p>
-
-            Join hundreds of members achieving real results with expert
-            coaching, premium equipment, and a motivating community.
-
-        </p>
-
-        <div class="cta-buttons">
-
-            <a href="#contact" class="btn-primary">
-
-                Join Now
-
-            </a>
-
-            <a href="#pricing" class="btn-secondary">
-
-                View Membership
-
-            </a>
-
-        </div>
-
-    </div>
-
-</section>
-<!-- ================= FOOTER ================= -->
-
-<footer class="footer">
-
-    <div class="footer-container">
-
-
-        <!-- COLUMN 1 -->
-
-        <div class="footer-column">
-
-            <a href="#" class="footer-logo">
-
-                Apex<span>Forge</span>
-
-            </a>
-
-            <p>
-
-                Transform your body, strengthen your mind,
-                and unlock your full potential with expert
-                coaching and world-class facilities.
-
-            </p>
-
-            <div class="footer-social">
-
-                <a href="#" aria-label="Facebook">
-
-                    <i class="fa-brands fa-facebook-f"></i>
-
-                </a>
-
-                <a href="#" aria-label="Instagram">
-
-                    <i class="fa-brands fa-instagram"></i>
-
-                </a>
-
-                <a href="#" aria-label="LinkedIn">
-
-                    <i class="fa-brands fa-linkedin-in"></i>
-
-                </a>
-
-                <a href="#" aria-label="YouTube">
-
-                    <i class="fa-brands fa-youtube"></i>
-
-                </a>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- COLUMN 2 -->
-
-        <div class="footer-column">
-
-            <h3>
-
-                Quick Links
-
-            </h3>
-
-            <ul>
-
-                <li><a href="#hero">Home</a></li>
-
-                <li><a href="#about">About</a></li>
-
-                <li><a href="#services">Services</a></li>
-
-                <li><a href="#pricing">Pricing</a></li>
-
-                <li><a href="#contact">Contact</a></li>
-
-            </ul>
-
-        </div>
-
-
-
-        <!-- COLUMN 3 -->
-
-        <div class="footer-column">
-
-            <h3>
-
-                Services
-
-            </h3>
-
-            <ul>
-
-                <li><a href="#">Personal Training</a></li>
-
-                <li><a href="#">Weight Loss</a></li>
-
-                <li><a href="#">Muscle Building</a></li>
-
-                <li><a href="#">Nutrition Plans</a></li>
-
-                <li><a href="#">Cardio Fitness</a></li>
-
-            </ul>
-
-        </div>
-
-
-
-        <!-- COLUMN 4 -->
-
-        <div class="footer-column">
-
-            <h3>
-
-                Contact
-
-            </h3>
-
-            <ul class="footer-contact">
-
-                <li>
-
-                    <i class="fa-solid fa-location-dot"></i>
-
-                    Karachi, Pakistan
-
-                </li>
-
-                <li>
-
-                    <i class="fa-solid fa-phone"></i>
-
-                    +92 300 1234567
-
-                </li>
-
-                <li>
-
-                    <i class="fa-solid fa-envelope"></i>
-
-                    info@apexforge.com
-
-                </li>
-
-            </ul>
-
-        </div>
-
-
-    </div>
-
-
-
-    <!-- Bottom -->
-
-    <div class="footer-bottom">
-
-        <p>
-
-            © 2026 <span>ApexForge</span>. All Rights Reserved.
-
-        </p>
-
-    </div>
-
-</footer>
+        </footer>
 
     </main>
     <!-- ================= WHATSAPP FLOAT ================= -->
 
-<a
-  href="https://wa.me/923001234567?text=Hi%20ApexForge!%20I'm%20interested%20in%20your%20website."
-  class="whatsapp-btn"
-  target="_blank"
-  aria-label="Chat on WhatsApp"
->
+    <a href="https://wa.me/923001234567?text=Hi%20ApexForge!%20I'm%20interested%20in%20your%20website."
+        class="whatsapp-btn" target="_blank" aria-label="Chat on WhatsApp">
 
-<svg xmlns="http://www.w3.org/2000/svg"
-viewBox="0 0 32 32"
-fill="currentColor">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor">
 
-<path d="M16.03 3C8.85 3 3 8.74 3 15.82c0 2.54.75 5.01 2.17 7.12L3 29l6.28-2.06a13.1 13.1 0 0 0 6.75 1.88c7.18 0 13.03-5.74 13.03-12.82C29.06 8.74 23.21 3 16.03 3zm7.56 18.28c-.31.86-1.79 1.64-2.47 1.74-.64.1-1.45.14-2.34-.14-.54-.17-1.24-.41-2.13-.79-3.74-1.61-6.18-5.37-6.37-5.63-.19-.26-1.52-2.02-1.52-3.86s.97-2.74 1.31-3.12c.34-.38.74-.48.99-.48h.71c.23 0 .54-.09.84.63.31.74 1.04 2.55 1.13 2.74.09.19.15.42.03.68-.12.26-.18.42-.36.65-.18.23-.38.51-.54.68-.18.18-.37.37-.16.73.21.36.94 1.54 2.01 2.49 1.38 1.23 2.55 1.61 2.91 1.79.36.18.57.15.78-.09.21-.23.9-1.05 1.14-1.41.24-.36.48-.3.81-.18.34.12 2.12.99 2.48 1.17.36.18.6.27.69.42.09.15.09.87-.22 1.73z"/>
+            <path
+                d="M16.03 3C8.85 3 3 8.74 3 15.82c0 2.54.75 5.01 2.17 7.12L3 29l6.28-2.06a13.1 13.1 0 0 0 6.75 1.88c7.18 0 13.03-5.74 13.03-12.82C29.06 8.74 23.21 3 16.03 3zm7.56 18.28c-.31.86-1.79 1.64-2.47 1.74-.64.1-1.45.14-2.34-.14-.54-.17-1.24-.41-2.13-.79-3.74-1.61-6.18-5.37-6.37-5.63-.19-.26-1.52-2.02-1.52-3.86s.97-2.74 1.31-3.12c.34-.38.74-.48.99-.48h.71c.23 0 .54-.09.84.63.31.74 1.04 2.55 1.13 2.74.09.19.15.42.03.68-.12.26-.18.42-.36.65-.18.23-.38.51-.54.68-.18.18-.37.37-.16.73.21.36.94 1.54 2.01 2.49 1.38 1.23 2.55 1.61 2.91 1.79.36.18.57.15.78-.09.21-.23.9-1.05 1.14-1.41.24-.36.48-.3.81-.18.34.12 2.12.99 2.48 1.17.36.18.6.27.69.42.09.15.09.87-.22 1.73z" />
 
-</svg>
+        </svg>
 
-<span>Chat Now</span>
+        <span>Chat Now</span>
 
-</a>
+    </a>
 
     <!-- JS -->
 

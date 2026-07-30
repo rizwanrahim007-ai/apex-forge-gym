@@ -4005,3 +4005,197 @@ height:26px;
     }
 
 }
+/* ================= BRANCH SELECTOR RESPONSIVE ================= */
+
+/* ---------- Tablet ---------- */
+
+@media (max-width:768px){
+
+    .branch-box{
+
+        max-width:380px;
+
+        padding:35px 25px;
+
+    }
+
+    .branch-box h2{
+
+        font-size:1.8rem;
+
+    }
+
+    .branch-box p{
+
+        font-size:14px;
+
+    }
+
+    #branchSelect{
+
+        padding:14px 16px;
+
+        font-size:15px;
+
+    }
+
+    #continueBtn{
+
+        padding:14px;
+
+        font-size:15px;
+
+    }
+
+}
+
+
+/* ---------- Mobile ---------- */
+
+@media (max-width:576px){
+
+    .branch-selector{
+
+        padding:18px;
+
+    }
+
+    .branch-box{
+
+        max-width:100%;
+
+        padding:30px 20px;
+
+        border-radius:18px;
+
+    }
+
+    .branch-box h2{
+
+        font-size:1.6rem;
+
+    }
+
+    .branch-box p{
+
+        font-size:13px;
+
+        margin-bottom:25px;
+
+    }
+
+    #branchSelect{
+
+        padding:13px 15px;
+
+        font-size:14px;
+
+    }
+
+    #continueBtn{
+
+        margin-top:20px;
+
+        padding:13px;
+
+        font-size:14px;
+
+    }
+
+}
+
+
+/* ---------- Small Phones ---------- */
+
+@media (max-width:380px){
+
+    .branch-box{
+
+        padding:25px 18px;
+
+    }
+
+    .branch-box h2{
+
+        font-size:1.4rem;
+
+    }
+
+    .branch-box p{
+
+        font-size:12px;
+
+    }
+
+    #branchSelect{
+
+        padding:12px;
+
+        font-size:13px;
+
+    }
+
+    #continueBtn{
+
+        padding:12px;
+
+        font-size:13px;
+
+    }
+
+}
+
+
+/* ---------- 292px ---------- */
+
+@media (max-width:292px){
+
+    .branch-selector{
+
+        padding:12px;
+
+    }
+
+    .branch-box{
+
+        padding:20px 15px;
+
+        border-radius:15px;
+
+    }
+
+    .branch-box h2{
+
+        font-size:1.2rem;
+
+    }
+
+    .branch-box p{
+
+        font-size:11px;
+
+        line-height:1.5;
+
+        margin-bottom:20px;
+
+    }
+
+    #branchSelect{
+
+        padding:10px;
+
+        font-size:12px;
+
+    }
+
+    #continueBtn{
+
+        margin-top:18px;
+
+        padding:10px;
+
+        font-size:12px;
+
+    }
+
+}
