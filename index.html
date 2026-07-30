@@ -496,6 +496,221 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
 
         </section>
+<!-- ================= BMI CALCULATOR ================= -->
+
+<section class="bmi" id="bmi">
+
+    <div class="section-heading">
+
+        <span class="section-tag">
+            FITNESS TOOL
+        </span>
+
+        <h2>
+
+            BMI
+            <span>CALCULATOR</span>
+
+        </h2>
+
+        <p>
+
+            Calculate your Body Mass Index instantly and receive
+            personalized health insights.
+
+        </p>
+
+    </div>
+
+
+
+    <div class="bmi-card">
+
+        <!-- Inputs -->
+
+        <div class="bmi-inputs">
+
+            <div class="input-box">
+
+                <label>
+
+                    Height (cm)
+
+                </label>
+
+                <input
+                    type="number"
+                    id="height"
+                    placeholder="170"
+                    min="100"
+                    max="250"
+                >
+
+            </div>
+
+
+
+            <div class="input-box">
+
+                <label>
+
+                    Weight (kg)
+
+                </label>
+
+                <input
+                    type="number"
+                    id="weight"
+                    placeholder="70"
+                    min="20"
+                    max="300"
+                >
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Buttons -->
+
+        <div class="bmi-buttons">
+
+            <button
+                id="calculateBtn"
+                class="btn-primary">
+
+                Calculate BMI
+
+            </button>
+
+            <button
+                id="resetBtn"
+                class="btn-secondary">
+
+                Reset
+
+            </button>
+
+        </div>
+
+
+
+        <!-- Result -->
+
+        <div class="bmi-result">
+
+            <div class="bmi-number">
+
+                <h3 id="bmiValue">
+
+                    --
+
+                </h3>
+
+                <span id="bmiCategory">
+
+                    Your BMI
+
+                </span>
+
+            </div>
+
+
+
+            <!-- Progress -->
+
+            <div class="bmi-progress">
+
+                <div
+                    class="bmi-progress-fill"
+                    id="progressFill">
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Stats -->
+
+            <div class="bmi-stats">
+
+                <div class="bmi-stat">
+
+                    <h4>
+
+                        Ideal Weight
+
+                    </h4>
+
+                    <span id="idealWeight">
+
+                        --
+
+                    </span>
+
+                </div>
+
+
+
+                <div class="bmi-stat">
+
+                    <h4>
+
+                        Water Intake
+
+                    </h4>
+
+                    <span id="waterIntake">
+
+                        --
+
+                    </span>
+
+                </div>
+
+
+
+                <div class="bmi-stat">
+
+                    <h4>
+
+                        Daily Calories
+
+                    </h4>
+
+                    <span id="dailyCalories">
+
+                        --
+
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Tip -->
+
+            <div class="bmi-tip">
+
+                <i class="fa-solid fa-lightbulb"></i>
+
+                <p id="bmiTip">
+
+                    Enter your height and weight to calculate your BMI.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
         <!-- ================= MEMBERSHIP SECTION ================= -->
 
         <section class="membership" id="membership">

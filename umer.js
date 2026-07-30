@@ -1110,7 +1110,15 @@ form.addEventListener("submit",(e)=>{
 /* ==========================================
    SMOOTH FLOATING EFFECT
 ========================================== */
+const ctaContent = document.querySelector(".cta-content");
 
+function animateCTA() {
+
+    if (!ctaContent) return;
+
+    ctaContent.classList.add("show");
+
+}
 let ctaAnimationFrame;
 
 function animateCTA(){
@@ -1219,3 +1227,200 @@ footerLinks.forEach(link=>{
     });
 
 });
+/* ================= BMI CALCULATOR ================= */
+
+const heightInput = document.getElementById("height");
+const weightInput = document.getElementById("weight");
+
+const calculateBtn = document.getElementById("calculateBtn");
+const resetBtn = document.getElementById("resetBtn");
+
+const bmiValue = document.getElementById("bmiValue");
+const bmiCategory = document.getElementById("bmiCategory");
+
+const progressFill = document.getElementById("progressFill");
+
+const idealWeight = document.getElementById("idealWeight");
+const waterIntake = document.getElementById("waterIntake");
+const dailyCalories = document.getElementById("dailyCalories");
+
+const bmiTip = document.getElementById("bmiTip");
+
+
+calculateBtn.addEventListener("click", calculateBMI);
+
+resetBtn.addEventListener("click", resetBMI);
+
+
+
+function calculateBMI(){
+
+    const height = parseFloat(heightInput.value);
+
+    const weight = parseFloat(weightInput.value);
+
+    if(isNaN(height) || isNaN(weight) || height<=0 || weight<=0){
+
+        alert("Please enter valid height and weight.");
+
+        return;
+
+    }
+
+    const bmi = weight / ((height/100)*(height/100));
+
+    animateBMI(bmi);
+
+}
+
+
+
+function animateBMI(bmi){
+
+    let start=0;
+
+    const duration=900;
+
+    const increment=bmi/(duration/16);
+
+    const timer=setInterval(()=>{
+
+        start+=increment;
+
+        if(start>=bmi){
+
+            start=bmi;
+
+            clearInterval(timer);
+
+        }
+
+        bmiValue.textContent=start.toFixed(1);
+
+    },16);
+
+    showResult(bmi);
+
+}
+
+
+
+function showResult(bmi){
+
+    let category="";
+
+    let color="#ffd60a";
+
+    let tip="";
+
+
+
+    if(bmi<18.5){
+
+        category="Underweight";
+
+        color="#3fa9ff";
+
+        tip="Increase healthy calories and include strength training.";
+
+    }
+
+    else if(bmi<25){
+
+        category="Healthy";
+
+        color="#39d353";
+
+        tip="Excellent! Maintain your current lifestyle.";
+
+    }
+
+    else if(bmi<30){
+
+        category="Overweight";
+
+        color="#ff9800";
+
+        tip="Add more cardio and monitor calorie intake.";
+
+    }
+
+    else{
+
+        category="Obese";
+
+        color="#ff4d4d";
+
+        tip="Consult a fitness professional and follow a structured plan.";
+
+    }
+
+    bmiCategory.textContent=category;
+
+    bmiCategory.style.color=color;
+
+    progressFill.style.width=Math.min((bmi/40)*100,100)+"%";
+
+    progressFill.style.background=color;
+
+
+
+    const min=(18.5*((heightInput.value/100)**2)).toFixed(1);
+
+    const max=(24.9*((heightInput.value/100)**2)).toFixed(1);
+
+    idealWeight.textContent=min+" - "+max+" kg";
+
+
+
+    waterIntake.textContent=(weightInput.value*0.035).toFixed(1)+" L";
+
+
+
+    const calories=Math.round(weightInput.value*33);
+
+    dailyCalories.textContent=calories+" kcal";
+
+
+
+    bmiTip.textContent=tip;
+
+}
+
+
+
+function resetBMI(){
+
+    heightInput.value="";
+
+    weightInput.value="";
+
+
+
+    bmiValue.textContent="--";
+
+
+
+    bmiCategory.textContent="Your BMI";
+
+    bmiCategory.style.color="#ffffff";
+
+
+
+    progressFill.style.width="0%";
+
+    progressFill.style.background="#ffd60a";
+
+
+
+    idealWeight.textContent="--";
+
+    waterIntake.textContent="--";
+
+    dailyCalories.textContent="--";
+
+
+
+    bmiTip.textContent="Enter your height and weight to calculate your BMI.";
+
+}

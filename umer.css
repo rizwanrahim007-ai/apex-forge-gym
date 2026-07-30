@@ -2220,6 +2220,433 @@ body{
     transform:translateX(0);
 
 }
+/* ================= BMI SECTION ================= */
+
+.bmi{
+
+    padding:120px 5%;
+
+    background:#0b0b0b;
+
+}
+
+.bmi .section-heading{
+
+    max-width:700px;
+
+    margin:0 auto 70px;
+
+    text-align:center;
+
+}
+
+.bmi .section-heading h2{
+
+    margin:18px 0;
+
+    font-family:"Bebas Neue",sans-serif;
+
+    font-size:clamp(48px,6vw,75px);
+
+    color:#fff;
+
+    line-height:1;
+
+}
+
+.bmi .section-heading h2 span{
+
+    color:#ffd60a;
+
+}
+
+.bmi .section-heading p{
+
+    color:#9d9d9d;
+
+    font-size:17px;
+
+    line-height:1.8;
+
+}
+
+
+
+/* ================= CARD ================= */
+
+.bmi-card{
+
+    max-width:750px;
+
+    margin:auto;
+
+    background:linear-gradient(180deg,#171717,#101010);
+
+    border:1px solid rgba(255,214,10,.15);
+
+    border-radius:28px;
+
+    padding:45px;
+
+    box-shadow:0 25px 60px rgba(0,0,0,.45);
+
+    transition:.35s;
+
+}
+
+.bmi-card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:#ffd60a;
+
+    box-shadow:0 20px 50px rgba(255,214,10,.15);
+
+}
+
+
+
+/* ================= INPUTS ================= */
+
+.bmi-inputs{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:25px;
+
+    margin-bottom:30px;
+
+}
+
+.input-box{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.input-box label{
+
+    margin-bottom:10px;
+
+    color:#d8d8d8;
+
+    font-size:15px;
+
+}
+
+.input-box input{
+
+    width:100%;
+
+    height:58px;
+
+    padding:0 18px;
+
+    border-radius:14px;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    background:#141414;
+
+    color:#fff;
+
+    font-size:16px;
+
+    outline:none;
+
+    transition:.35s;
+
+}
+
+.input-box input::placeholder{
+
+    color:#666;
+
+}
+
+.input-box input:focus{
+
+    border-color:#ffd60a;
+
+    box-shadow:0 0 18px rgba(255,214,10,.15);
+
+}
+
+
+
+/* ================= BMI BUTTONS ================= */
+
+.bmi-buttons{
+
+    display:flex;
+
+    gap:15px;
+
+    margin:35px 0;
+
+}
+
+.bmi-buttons button{
+
+    flex:1;
+
+    height:58px;
+
+    border:none;
+
+    border-radius:14px;
+
+    cursor:pointer;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    transition:.35s ease;
+
+}
+
+.btn-primary{
+
+    background:#ffd60a;
+
+    color:#111;
+
+}
+
+.btn-primary:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 15px 35px rgba(255,214,10,.25);
+
+}
+
+.btn-secondary{
+
+    background:#1d1d1d;
+
+    color:#fff;
+
+    border:1px solid rgba(255,255,255,.08);
+
+}
+
+.btn-secondary:hover{
+
+    background:#292929;
+
+    border-color:#ffd60a;
+
+}
+
+
+/* ================= RESULT ================= */
+
+.bmi-result{
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+    padding-top:40px;
+
+}
+
+
+
+/* ================= BMI NUMBER ================= */
+
+.bmi-number{
+
+    text-align:center;
+
+    margin-bottom:30px;
+
+}
+
+.bmi-number h3{
+
+    font-size:72px;
+
+    color:#ffd60a;
+
+    margin-bottom:8px;
+
+    font-family:"Bebas Neue",sans-serif;
+
+}
+
+.bmi-number span{
+
+    color:#fff;
+
+    font-size:18px;
+
+}
+
+
+
+/* ================= PROGRESS ================= */
+
+.bmi-progress{
+
+    width:100%;
+
+    height:12px;
+
+    background:#222;
+
+    border-radius:50px;
+
+    overflow:hidden;
+
+    margin-bottom:35px;
+
+}
+
+.bmi-progress-fill{
+
+    width:0;
+
+    height:100%;
+
+    border-radius:50px;
+
+    background:linear-gradient(90deg,#ffd60a,#ffef9f);
+
+    transition:width .8s ease;
+
+}
+
+
+
+/* ================= STATS ================= */
+
+.bmi-stats{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:18px;
+
+    margin-bottom:30px;
+
+}
+
+.bmi-stat{
+
+    background:#151515;
+
+    border:1px solid rgba(255,255,255,.06);
+
+    border-radius:18px;
+
+    padding:22px;
+
+    text-align:center;
+
+    transition:.35s;
+
+}
+
+.bmi-stat:hover{
+
+    border-color:#ffd60a;
+
+    transform:translateY(-5px);
+
+}
+
+.bmi-stat h4{
+
+    color:#9f9f9f;
+
+    font-size:14px;
+
+    margin-bottom:10px;
+
+}
+
+.bmi-stat span{
+
+    color:#fff;
+
+    font-size:18px;
+
+    font-weight:600;
+
+}
+
+
+
+/* ================= TIP ================= */
+
+.bmi-tip{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:15px;
+
+    padding:22px;
+
+    background:#151515;
+
+    border-left:4px solid #ffd60a;
+
+    border-radius:18px;
+
+}
+
+.bmi-tip i{
+
+    color:#ffd60a;
+
+    font-size:20px;
+
+    margin-top:2px;
+
+}
+
+.bmi-tip p{
+
+    color:#d5d5d5;
+
+    line-height:1.8;
+
+    font-size:15px;
+
+}
+
+
+
+/* ================= ANIMATION ================= */
+
+.bmi-card{
+
+
+    transform:translateY(60px);
+
+}
+
+.bmi-card.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+    transition:
+
+    opacity .8s ease,
+
+    transform .8s ease;
+
+}
 /* ================= MEMBERSHIP SECTION ================= */
 
 
